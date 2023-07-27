@@ -9,40 +9,58 @@ local plugins = {
         highlight_git = true,
         icons = {
           show = {
-            git = true
+            git = true,
           },
           glyphs = {
             folder = {
-              default = ""
+              default = "",
             },
           },
         },
       },
     },
   },
-  {
-    "williamboman/mason.nvim",
-    lazy = false,
-  },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   lazy = false,
+  -- },
+  -- {
+  --   "williamboman/mason-lspconfig.nvim",
+  --   opts = {
+  --     automatic_installation = true,
+  --   },
+  --   lazy = false,
+  -- },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   config = function()
+  --     require "plugins.configs.lspconfig"
+  --     require "custom.configs.lspconfig"
+  --   end,
+  -- },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = {
-      automatic_installation = true,
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
     },
-    lazy = false,
-  },
-  {
-    "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
-    -- dependencies = {
-    --   "jose-elias-alvarez/null-ls.nvim",
-    --   config = function()
-    --     require "custom.configs.null-ls"
-    --   end,
-    -- },
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "nvim-lua/plenary.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+    config = function()
+      require "custom.configs.null-ls" -- require your null-ls config here (example below)
+    end,
   },
   {
     "christoomey/vim-tmux-navigator",
@@ -52,7 +70,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       highlight = {
-        disable = {"tex"}
+        disable = { "tex" },
       },
     },
   },
@@ -65,23 +83,33 @@ local plugins = {
         -- { name = "buffer" },
         { name = "nvim_lua" },
         { name = "path" },
+        { name = "omni" },
       },
     },
   },
   {
     "lervag/vimtex",
-    ft="tex",
+    ft = "tex",
+    config = function()
+      vim.g.vimtex_compiler_progname = "nvr"
+
+      vim.g.vimtex_compiler_latexmk = {
+        out_dir = "output",
+      }
+    end,
   },
   {
     "CRAG666/code_runner.nvim",
     config = true,
-    lazy = false,
+    cmd = {
+      "RunCode",
+    },
     opts = {
       filetype = {
         go = {
           "cd $dir &&",
-          "go run ."
-        }
+          "go run .",
+        },
       },
     },
   },

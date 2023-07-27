@@ -1,10 +1,15 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
+require("mason-lspconfig").setup {
+  ensure_installed = nil,
+  automatic_installation = true,
+}
+
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "cssls", "tsserver", "clangd", "yamlls", "texlab", "eslint", "marksman"}
+local servers = { "html", "cssls", "tsserver", "clangd", "yamlls", "texlab", "eslint", "marksman", "lua_ls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,13 +18,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.yamlls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  ft = "yaml"
-})
-
-lspconfig.gopls.setup({
+lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = { "gopls" },
@@ -30,13 +29,7 @@ lspconfig.gopls.setup({
       completeUnimported = true,
       analyses = {
         unusedparams = true,
-      }
-    }
-  }
-})
-
-lspconfig.lua_ls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  ft = "lua"
-})
+      },
+    },
+  },
+}
