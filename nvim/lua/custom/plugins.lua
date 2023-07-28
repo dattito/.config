@@ -1,5 +1,6 @@
 local plugins = {
   {
+
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = {
@@ -20,24 +21,12 @@ local plugins = {
       },
     },
   },
-  -- {
-  --   "williamboman/mason.nvim",
-  --   lazy = false,
-  -- },
-  -- {
-  --   "williamboman/mason-lspconfig.nvim",
-  --   opts = {
-  --     automatic_installation = true,
-  --   },
-  --   lazy = false,
-  -- },
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require "plugins.configs.lspconfig"
-  --     require "custom.configs.lspconfig"
-  --   end,
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      return require "custom.configs.treesitter"
+    end,
+  },
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = {
@@ -113,6 +102,14 @@ local plugins = {
       },
     },
   },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup {}
+  --   end,
+  -- },
 }
 
 return plugins
