@@ -1,5 +1,8 @@
 ralt - c : open -a iTerm
 ralt - x : open -a Safari
+ralt - v : open -a Vivid
+ralt - d : open -a Docker
+ralt - m : open -a Music
 
 ralt - s : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 ralt - a : yabai -m window --focus stack.next || yabai -m window --focus stack.first

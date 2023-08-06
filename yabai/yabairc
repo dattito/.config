@@ -27,3 +27,4 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Lunar$" manage=off
 yabai -m rule --add app="^Rectangle$" manage=off
 yabai -m rule --add app="^Vivid$" manage=off
+yabai -m rule --add app="Hotspot Shield" manage=off
