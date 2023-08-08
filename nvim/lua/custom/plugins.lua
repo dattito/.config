@@ -82,6 +82,12 @@ local plugins = {
     config = function()
       vim.g.vimtex_compiler_progname = "nvr"
 
+      vim.g.vimtex_quickfix_ignore_filters = {
+        "Underfull",
+        "Overfull",
+        "Empty bibliography",
+      }
+
       if vim.fn.has "wsl" then
         vim.g.vimtex_view_general_viewer = "SumatraPDF"
         vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
