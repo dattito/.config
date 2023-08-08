@@ -5,7 +5,7 @@ M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
 M.ui = {
-  theme = "blossom_light",
+  theme = "catppuccin",
   transparency = false,
 
   nvdash = {
