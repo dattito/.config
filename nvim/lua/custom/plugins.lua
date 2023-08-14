@@ -38,6 +38,7 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
     event = { "BufReadPre", "BufNewFile" },
+    build = ":! brew install node go",
   },
   {
     "jay-babu/mason-null-ls.nvim",
@@ -67,6 +68,7 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     opts = {
       sources = {
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         -- { name = "buffer" },
@@ -80,6 +82,7 @@ local plugins = {
     "lervag/vimtex",
     ft = "tex",
     config = function()
+      vim.g.tex_flavor = "latex"
       vim.g.vimtex_compiler_progname = "nvr"
 
       vim.g.vimtex_quickfix_ignore_filters = {
@@ -113,14 +116,36 @@ local plugins = {
       },
     },
   },
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup {}
-  --   end,
-  -- },
+  {
+    "wfxr/minimap.vim",
+    event = { "BufReadPre", "BufNewFile" },
+    init = function()
+      vim.g.minimap_width = 14
+      vim.g.minimap_auto_start = 1
+      vim.g.minimap_git_colors = 1
+    end,
+    build = ":! brew install code-minimap",
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    dependencies = {
+      "zbirenbaum/copilot-cmp",
+    },
+    config = function()
+      require("copilot").setup {
+        suggestion = {
+          enabled = false,
+          auto_trigger = true,
+        },
+        panel = {
+          enabled = false,
+        },
+      }
+      require("copilot_cmp").setup()
+    end,
+  },
 }
 
 return plugins
