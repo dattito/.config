@@ -109,6 +109,7 @@ local plugins = {
     },
     opts = {
       filetype = {
+        yaml = "kubectl apply -f $file",
         go = {
           "cd $dir &&",
           "go run .",
