@@ -1,8 +1,10 @@
-ralt - c : open -a iTerm
-ralt - x : open -a Safari
-ralt - v : open -a Vivid
-ralt - d : open -a Docker
-ralt - m : open -a Music
+ralt - 1 : open -a iTerm
+ralt - 2 : open -a Safari
+ralt - 3 : open -a Music
+ralt - 4 : open -a Settings
+ralt - 5 : open -a "Visual Studio Code"
+ralt - 6 : open -a Vivid
+ralt - 7 : open -a Docker
 
 lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
 lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove
