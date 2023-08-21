@@ -5,6 +5,7 @@ ralt + shift - 2 : open -a Safari
 ralt - 3 : open -a Music
 ralt + shift - 3 : open -a "Microsoft Teams"
 ralt - 4 : open -a Settings
+ralt + shift - 4 : open -a "Messages"
 ralt - 5 : open -a "Visual Studio Code"
 ralt - 6 : open -a "Microsoft Outlook"
 ralt - 7 : open -a Docker
