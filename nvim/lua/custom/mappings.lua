@@ -1,6 +1,7 @@
 local M = {}
 
 M.tmux = {
+  plugin = true,
   n = {
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "Window left" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "Window right" },
@@ -10,6 +11,7 @@ M.tmux = {
 }
 
 M.vimtex = {
+  plugin = true,
   n = {
     ["<leader>rr"] = { "<cmd> RunCode<CR>", "Run code" },
     ["<leader>ll"] = { "<plug>(vimtex-compile)", "Compile latex" },
@@ -18,20 +20,71 @@ M.vimtex = {
 }
 
 M.copilot = {
-  i = {
-    ["<C-u>"] = {
-      function()
-        require("copilot.suggestion").accept()
-      end,
-      "accept copilot suggestion",
-    },
-  },
+  plugin = true,
   n = {
     ["<leader>co"] = {
       function()
         require("copilot.suggestion").toggle_auto_trigger()
       end,
       "toggle copilot suggestion",
+    },
+  },
+}
+
+M.harpoon = {
+  plugin = true,
+  n = {
+    ["<leader>pa"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+      "Add file to harpoon",
+    },
+    ["<leader>pu"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      "Toggle harpoon quick menu",
+    },
+
+    ["<leader>1"] = {
+      function()
+        require("harpoon.ui").nav_file(1)
+      end,
+      "Go to harpoon mark 1",
+    },
+    ["<leader>2"] = {
+      function()
+        require("harpoon.ui").nav_file(2)
+      end,
+      "Go to harpoon mark 2",
+    },
+    ["<leader>3"] = {
+      function()
+        require("harpoon.ui").nav_file(3)
+      end,
+      "Go to harpoon mark 3",
+    },
+    ["<leader>4"] = {
+      function()
+        require("harpoon.ui").nav_file(4)
+      end,
+      "Go to harpoon mark 4",
+    },
+  },
+}
+
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Add breakpoint at line" },
+    ["<leader>ds"] = {
+      function()
+        local widgets = require "dap.ui.widgets"
+        local sidebar = widgets.sidebar(widgets.scope)
+        sidebar.open()
+      end,
+      "Open debug sidebar",
     },
   },
 }

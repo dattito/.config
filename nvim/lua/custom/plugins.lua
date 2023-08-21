@@ -1,25 +1,9 @@
 local plugins = {
   {
-
     "nvim-tree/nvim-tree.lua",
-    opts = {
-      git = {
-        enable = true,
-      },
-      renderer = {
-        highlight_git = true,
-        icons = {
-          show = {
-            git = true,
-          },
-          glyphs = {
-            folder = {
-              default = "",
-            },
-          },
-        },
-      },
-    },
+    opts = function()
+      return require "custom.configs.nvim-tree"
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -55,6 +39,9 @@ local plugins = {
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
+    init = function()
+      require("core.utils").load_mappings "vimtex"
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -81,6 +68,9 @@ local plugins = {
   {
     "lervag/vimtex",
     ft = "tex",
+    init = function()
+      require("core.utils").load_mappings "vimtex"
+    end,
     config = function()
       vim.g.tex_flavor = "latex"
       vim.g.vimtex_compiler_progname = "nvr"
@@ -119,7 +109,7 @@ local plugins = {
   },
   {
     "wfxr/minimap.vim",
-    event = { "BufReadPre", "BufNewFile" },
+    cmd = "Minimap",
     init = function()
       vim.g.minimap_width = 14
       vim.g.minimap_auto_start = 1
@@ -145,6 +135,31 @@ local plugins = {
         },
       }
       require("copilot_cmp").setup()
+    end,
+    init = function()
+      require("core.utils").load_mappings "copilot"
+    end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = "nvim-lua/plenary.nvim",
+    init = function()
+      require("core.utils").load_mappings "harpoon"
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    init = function()
+      require("core.utils").load_mappings "dap"
+    end,
+  },
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+      require("core.utils").load_mappings "dap_go"
     end,
   },
 }
