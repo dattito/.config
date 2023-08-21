@@ -1,10 +1,12 @@
 ralt - 1 : open -a iTerm
-ralt - 2 : open -a Safari
-ralt + shift - 2 : open -a Firefox
+ralt + shift - 1 : open -a Slack
+ralt - 2 : open -a "Google Chrome"
+ralt + shift - 2 : open -a Safari
 ralt - 3 : open -a Music
+ralt + shift - 3 : open -a "Microsoft Teams"
 ralt - 4 : open -a Settings
 ralt - 5 : open -a "Visual Studio Code"
-ralt - 6 : open -a Vivid
+ralt - 6 : open -a "Microsoft Outlook"
 ralt - 7 : open -a Docker
 
 lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
