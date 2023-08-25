@@ -22,7 +22,7 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
     event = { "BufReadPre", "BufNewFile" },
-    build = ":! brew install node go",
+    build = ":! brew install node go ripgrep",
   },
   {
     "jay-babu/mason-null-ls.nvim",
@@ -148,20 +148,41 @@ local plugins = {
     end,
   },
   {
-    "mfussenegger/nvim-dap",
+    "uga-rosa/translate.nvim",
+    cmd = "Translate",
     init = function()
-      require("core.utils").load_mappings "dap"
+      require("core.utils").load_mappings "translate"
+    end,
+    config = function()
+      require("translate").setup {
+        default = {
+          output = "register",
+        },
+        preset = {
+          output = {
+            split = {
+              append = true,
+            },
+          },
+        },
+      }
     end,
   },
-  {
-    "leoluz/nvim-dap-go",
-    ft = "go",
-    dependencies = "mfussenegger/nvim-dap",
-    config = function(_, opts)
-      require("dap-go").setup(opts)
-      require("core.utils").load_mappings "dap_go"
-    end,
-  },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   init = function()
+  --     require("core.utils").load_mappings "dap"
+  --   end,
+  -- },
+  -- {
+  --   "leoluz/nvim-dap-go",
+  --   ft = "go",
+  --   dependencies = "mfussenegger/nvim-dap",
+  --   config = function(_, opts)
+  --     require("dap-go").setup(opts)
+  --     require("core.utils").load_mappings "dap_go"
+  --   end,
+  -- },
 }
 
 return plugins

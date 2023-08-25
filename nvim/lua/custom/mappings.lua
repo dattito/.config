@@ -89,4 +89,20 @@ M.dap = {
   },
 }
 
+M.translate = {
+  plugin = true,
+  n = {
+    ["<leader>tdy"] = { "<cmd> Translate DE<CR>", "Translate and yank word under cursor to german" },
+    ["<leader>tey"] = { "<cmd> Translate EN<CR>", "Translate and yank word under cursor to english" },
+    ["<leader>tds"] = { "<cmd> Translate DE -output=floating<CR>", "Translate and show word under cursor to german" },
+    ["<leader>tes"] = { "<cmd> Translate EN -output=floating<CR>", "Translate and show word under cursor to english" },
+  },
+  v = {
+    ["<leader>tdy"] = { "<cmd> Translate DE<CR>", "Translate and yank word under cursor to german" },
+    ["<leader>tey"] = { "<cmd> Translate EN<CR>", "Translate and yank word under cursor to english" },
+    ["<leader>tds"] = { "<cmd> Translate DE -output=floating<CR>", "Translate and show word under cursor to german" },
+    ["<leader>tes"] = { "<cmd> Translate EN -output=floating<CR>", "Translate and show word under cursor to english" },
+  },
+}
+
 return M
