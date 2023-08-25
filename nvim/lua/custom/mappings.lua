@@ -89,6 +89,24 @@ M.dap = {
   },
 }
 
+M.dap_go = {
+  plugin = true,
+  n = {
+    ["<leader>dgt"] = {
+      function()
+        require("dap-go").debug_test()
+      end,
+      "Debug go test",
+    },
+    ["<leader>dgl"] = {
+      function()
+        require("dap-go").debug_last()
+      end,
+      "Debug last go test",
+    },
+  },
+}
+
 M.translate = {
   plugin = true,
   n = {
@@ -102,6 +120,13 @@ M.translate = {
     ["<leader>tey"] = { "<cmd> Translate EN<CR>", "Translate and yank word under cursor to english" },
     ["<leader>tds"] = { "<cmd> Translate DE -output=floating<CR>", "Translate and show word under cursor to german" },
     ["<leader>tes"] = { "<cmd> Translate EN -output=floating<CR>", "Translate and show word under cursor to english" },
+  },
+}
+
+M.gopher = {
+  plugin = true,
+  n = {
+    ["<leader>ge"] = { "<cmd> GoIfErr<CR>", "add go 'if err'" },
   },
 }
 

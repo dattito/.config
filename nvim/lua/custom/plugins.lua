@@ -168,21 +168,36 @@ local plugins = {
       }
     end,
   },
-  -- {
-  --   "mfussenegger/nvim-dap",
-  --   init = function()
-  --     require("core.utils").load_mappings "dap"
-  --   end,
-  -- },
-  -- {
-  --   "leoluz/nvim-dap-go",
-  --   ft = "go",
-  --   dependencies = "mfussenegger/nvim-dap",
-  --   config = function(_, opts)
-  --     require("dap-go").setup(opts)
-  --     require("core.utils").load_mappings "dap_go"
-  --   end,
-  -- },
+  {
+    "mfussenegger/nvim-dap",
+    init = function()
+      require("core.utils").load_mappings "dap"
+    end,
+  },
+  {
+    "leoluz/nvim-dap-go",
+    -- ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end,
+    init = function()
+      require("core.utils").load_mappings "dap_go"
+    end,
+  },
+  {
+    "olexsmir/gopher.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    init = function()
+      require("core.utils").load_mappings "gopher"
+    end,
+    build = function()
+      vim.cmd [[silent! GoInstallDeps]]
+    end,
+  },
 }
 
 return plugins
