@@ -72,8 +72,8 @@ local plugins = {
       require("core.utils").load_mappings "vimtex"
     end,
     config = function()
-      vim.g.tex_flavor = "latex"
-      vim.g.vimtex_compiler_progname = "nvr"
+      -- vim.g.tex_flavor = "latex"
+      -- vim.g.vimtex_compiler_progname = "nvr"
 
       vim.g.vimtex_quickfix_ignore_filters = {
         "Underfull",
@@ -81,10 +81,11 @@ local plugins = {
         "Empty bibliography",
       }
 
-      if vim.fn.has "wsl" then
-        vim.g.vimtex_view_general_viewer = "SumatraPDF"
-        vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
-      end
+      -- If statement is always "true", so useless...
+      -- if vim.fn.has "wsl" then
+      --   vim.g.vimtex_view_general_viewer = "SumatraPDF"
+      --   vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
+      -- end
 
       vim.g.vimtex_compiler_latexmk = {
         out_dir = "output",
@@ -197,6 +198,21 @@ local plugins = {
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
     end,
+  },
+  {
+    "stevearc/oil.nvim",
+    cmd = "Oil",
+    config = function()
+      require("oil").setup {
+        view_options = {
+          show_hidden = true,
+        },
+      }
+    end,
+    init = function()
+      require("core.utils").load_mappings "oil"
+    end,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 }
 

@@ -130,4 +130,17 @@ M.gopher = {
   },
 }
 
+M.oil = {
+  plugin = true,
+  n = {
+    ["-"] = { "<cmd> Oil<CR>", "Open oil file explorer" },
+    ["<leader>-"] = {
+      function()
+        require("oil").close()
+      end,
+      "close oil",
+    },
+  },
+}
+
 return M
