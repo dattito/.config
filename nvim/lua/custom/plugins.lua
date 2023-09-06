@@ -1,10 +1,10 @@
 local plugins = {
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = function()
-      return require "custom.configs.nvim-tree"
-    end,
-  },
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   opts = function()
+  --     return require "custom.configs.nvim-tree"
+  --   end,
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
@@ -213,6 +213,27 @@ local plugins = {
       require("core.utils").load_mappings "oil"
     end,
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "natecraddock/workspaces.nvim",
+    cmd = {
+      "WorkspacesAdd",
+      "WorkspacesAddDir",
+      "WorkspacesRemove",
+      "WorkspacesRemoveDir",
+      "WorkspacesRename",
+      "WorkspacesList",
+      "WorkspacesListDirs",
+      "WorkspacesOpen",
+      "WorkspacesSyncDirs",
+    },
+    config = function()
+      require("workspaces").setup {
+        hooks = {
+          open = "Oil",
+        },
+      }
+    end,
   },
 }
 

@@ -8,9 +8,9 @@ M.ui = {
   theme = "catppuccin",
   transparency = false,
 
-  nvdash = {
-    load_on_startup = true,
-  },
+  -- nvdash = {
+  --   load_on_startup = true,
+  -- },
 
   statusline = {
     theme = "minimal",
