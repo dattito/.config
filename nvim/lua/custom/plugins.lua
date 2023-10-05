@@ -55,8 +55,8 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     opts = {
       sources = {
-        { name = "copilot" },
         { name = "nvim_lsp" },
+        { name = "copilot" },
         { name = "luasnip" },
         -- { name = "buffer" },
         { name = "nvim_lua" },
@@ -105,6 +105,9 @@ local plugins = {
           "cd $dir &&",
           "go run .",
         },
+        rust = {
+          "cargo run",
+        },
       },
     },
   },
@@ -122,6 +125,7 @@ local plugins = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    enabled = false,
     dependencies = {
       "zbirenbaum/copilot-cmp",
     },
