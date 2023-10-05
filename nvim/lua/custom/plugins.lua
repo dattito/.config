@@ -6,6 +6,25 @@ local plugins = {
   --   end,
   -- },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        prompt_prefix = " 󱁴 Search: ",
+        vimgrep_arguments = {
+          "rg",
+          "-L",
+          "--hidden",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+        },
+      },
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       return require "custom.configs.treesitter"
@@ -123,6 +142,7 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
+    enabled = false,
     cmd = "Copilot",
     event = "InsertEnter",
     enabled = false,
