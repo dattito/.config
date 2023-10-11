@@ -18,23 +18,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "rust" },
-  root_dir = util.root_pattern "Cargo.toml",
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        allFeatures = true,
-      },
-      checkOnSave = {
-        cmd = "clippy",
-      },
-    },
-  },
-}
-
 lspconfig.lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
