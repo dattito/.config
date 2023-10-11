@@ -9,7 +9,7 @@ require("mason-lspconfig").setup {
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "cssls", "tsserver", "clangd", "texlab", "eslint", "marksman", "lua_ls", "yamlls" }
+local servers = { "html", "cssls", "tsserver", "clangd", "texlab", "eslint", "marksman", "yamlls", "tailwindcss" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -30,6 +30,29 @@ lspconfig.rust_analyzer.setup {
       },
       checkOnSave = {
         cmd = "clippy",
+      },
+    },
+  },
+}
+
+lspconfig.lua_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = {
+          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+          [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
+          [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
+        },
+        maxPreload = 100000,
+        preloadFileSize = 10000,
       },
     },
   },

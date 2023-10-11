@@ -1,6 +1,11 @@
-local chad_options = require "plugins.configs.treesitter"
+local opt = require "plugins.configs.treesitter"
 
-chad_options.auto_install = true
-chad_options.ignore_install = { "latex" }
+opt.auto_install = true
 
-return chad_options
+opt.ignore_install = { "latex" }
+
+opt.autotag = {
+  enable = true,
+}
+
+return opt

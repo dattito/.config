@@ -25,6 +25,31 @@ local plugins = {
     },
   },
   {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+    ft = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "xml",
+      "php",
+      "markdown",
+      "astro",
+      "glimmer",
+      "handlebars",
+      "hbs",
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function()
       return require "custom.configs.treesitter"
@@ -74,6 +99,7 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     opts = {
       sources = {
+        { name = "crates" },
         { name = "nvim_lsp" },
         { name = "copilot" },
         { name = "luasnip" },
@@ -142,7 +168,6 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
-    enabled = false,
     cmd = "Copilot",
     event = "InsertEnter",
     enabled = false,
@@ -231,6 +256,8 @@ local plugins = {
         view_options = {
           show_hidden = true,
         },
+        skip_confirm_for_simple_edits = true,
+        cleanup_delay_ms = 500,
       }
     end,
     init = function()
@@ -258,6 +285,43 @@ local plugins = {
         },
       }
     end,
+  },
+  {
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    tag = "v0.4.0",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("crates").setup {
+        src = {
+          cmp = {
+            enabled = true,
+          },
+          -- null_ls = {
+          --   enabled = true,
+          -- },
+        },
+      }
+
+      local function show_documentation()
+        local filetype = vim.bo.filetype
+        if vim.tbl_contains({ "vim", "help" }, filetype) then
+          vim.cmd("h " .. vim.fn.expand "<cword>")
+        elseif vim.tbl_contains({ "man" }, filetype) then
+          vim.cmd("Man " .. vim.fn.expand "<cword>")
+        elseif vim.fn.expand "%:t" == "Cargo.toml" and require("crates").popup_available() then
+          require("crates").show_popup()
+        else
+          vim.lsp.buf.hover()
+        end
+      end
+
+      vim.keymap.set("n", "K", show_documentation, { silent = true })
+    end,
+  },
+  {
+    "tpope/vim-surround",
+    event = { "BufReadPre", "BufNewFile" },
   },
 }
 
