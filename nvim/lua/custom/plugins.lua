@@ -1,15 +1,10 @@
 local plugins = {
-  -- {
-  --   "nvim-tree/nvim-tree.lua",
-  --   opts = function()
-  --     return require "custom.configs.nvim-tree"
-  --   end,
-  -- },
   {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
         prompt_prefix = " 󱁴 Search: ",
+        file_ignore_patterns = { "node_modules", ".git", "__pycache__" },
         vimgrep_arguments = {
           "rg",
           "-L",
@@ -214,6 +209,27 @@ local plugins = {
       require("telescope").load_extension "zoxide"
     end,
     build = ":! brew install zoxide",
+  },
+  {
+    "ThePrimeagen/git-worktree.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    init = function()
+      require("core.utils").load_mappings "git_worktree"
+    end,
+    config = function()
+      require("telescope").load_extension "git_worktree"
+    end,
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    dependencies = "nvim-telescope/telescope.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("project_nvim").setup {
+        scope_chdir = "tab",
+        detection_methods = { "pattern" },
+      }
+    end,
   },
   {
     "uga-rosa/translate.nvim",

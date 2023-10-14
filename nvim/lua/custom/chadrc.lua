@@ -6,6 +6,7 @@ M.mappings = require "custom.mappings"
 
 M.ui = {
   theme = "catppuccin",
+  theme_toggle = { "catppuccin", "one_light" },
   transparency = false,
 
   -- nvdash = {
@@ -15,6 +16,9 @@ M.ui = {
   statusline = {
     theme = "minimal",
   },
+  -- tabufline = {
+  --   enabled = false,
+  -- },
 }
 
 return M

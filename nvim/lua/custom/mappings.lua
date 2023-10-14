@@ -160,4 +160,28 @@ M.zoxide = {
   },
 }
 
+M.git_worktree = {
+  plugin = true,
+  n = {
+    ["<leader>ft"] = {
+      function()
+        require("telescope").extensions.git_worktree.git_worktrees()
+      end,
+      "Find git worktrees",
+    },
+    ["<leader>fn"] = {
+      function()
+        require("telescope.builtin").find_files { cwd = "~/.config/nvim" }
+      end,
+      "Find files in .config",
+    },
+    ["<leader>fr"] = {
+      function()
+        require("telescope.builtin").find_files { cwd = "~/repositories" }
+      end,
+      "Find files in repositories",
+    },
+  },
+}
+
 return M
