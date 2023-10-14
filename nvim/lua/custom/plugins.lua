@@ -192,10 +192,28 @@ local plugins = {
   },
   {
     "ThePrimeagen/harpoon",
-    dependencies = "nvim-lua/plenary.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     init = function()
       require("core.utils").load_mappings "harpoon"
     end,
+    config = function()
+      require("telescope").load_extension "harpoon"
+    end,
+  },
+  {
+    "jvgrootveld/telescope-zoxide",
+    dependencies = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    init = function()
+      require("core.utils").load_mappings "zoxide"
+    end,
+    config = function()
+      require("telescope").load_extension "zoxide"
+    end,
+    build = ":! brew install zoxide",
   },
   {
     "uga-rosa/translate.nvim",
@@ -297,9 +315,6 @@ local plugins = {
           cmp = {
             enabled = true,
           },
-          -- null_ls = {
-          --   enabled = true,
-          -- },
         },
       }
 

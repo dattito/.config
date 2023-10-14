@@ -46,7 +46,12 @@ M.harpoon = {
       end,
       "Toggle harpoon quick menu",
     },
-
+    ["<leader>fh"] = {
+      function()
+        require("telescope").extensions.harpoon.marks()
+      end,
+      "Find harpoon marks",
+    },
     ["<leader>1"] = {
       function()
         require("harpoon.ui").nav_file(1)
@@ -139,6 +144,18 @@ M.oil = {
         require("oil").close()
       end,
       "close oil",
+    },
+  },
+}
+
+M.zoxide = {
+  plugin = true,
+  n = {
+    ["<leader>fj"] = {
+      function()
+        require("telescope").extensions.zoxide.list()
+      end,
+      "Find and change workspace",
     },
   },
 }
