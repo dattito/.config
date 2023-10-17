@@ -4,7 +4,7 @@ local plugins = {
     opts = {
       defaults = {
         prompt_prefix = " 󱁴 Search: ",
-        file_ignore_patterns = { "node_modules", ".git", "__pycache__" },
+        file_ignore_patterns = { "node_modules", "^.*/\\.git/?$", "__pycache__", ".conda" },
         vimgrep_arguments = {
           "rg",
           "-L",
@@ -164,8 +164,8 @@ local plugins = {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "InsertEnter",
-    enabled = false,
+    -- event = "InsertEnter",
+    -- enabled = false,
     dependencies = {
       "zbirenbaum/copilot-cmp",
     },

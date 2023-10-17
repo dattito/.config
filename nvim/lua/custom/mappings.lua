@@ -23,9 +23,7 @@ M.copilot = {
   plugin = true,
   n = {
     ["<leader>co"] = {
-      function()
-        require("copilot.suggestion").toggle_auto_trigger()
-      end,
+      "<cmd> Copilot toggle<CR>",
       "toggle copilot suggestion",
     },
   },

@@ -9,7 +9,18 @@ require("mason-lspconfig").setup {
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "cssls", "tsserver", "clangd", "texlab", "eslint", "marksman", "yamlls", "tailwindcss" }
+local servers = {
+  "html",
+  "cssls",
+  "tsserver",
+  "clangd",
+  "texlab",
+  "eslint",
+  "marksman",
+  "yamlls",
+  "tailwindcss",
+  "pyright",
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
