@@ -20,6 +20,8 @@ local servers = {
   "yamlls",
   "tailwindcss",
   "pyright",
+  "sqlls",
+  "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
