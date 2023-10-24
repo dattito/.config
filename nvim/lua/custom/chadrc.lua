@@ -19,6 +19,7 @@ M.ui = {
   -- tabufline = {
   --   enabled = false,
   -- },
+  extended_integrations = { "alpha", "notify", "todo", "rainbowdelimiters", "codeactionmenu" },
 }
 
 return M

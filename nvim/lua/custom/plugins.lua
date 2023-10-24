@@ -15,6 +15,7 @@ local plugins = {
           "--line-number",
           "--column",
           "--smart-case",
+          "--glob=!.git",
         },
       },
     },
@@ -212,7 +213,11 @@ local plugins = {
   },
   {
     "ThePrimeagen/git-worktree.nvim",
-    dependencies = "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
     init = function()
       require("core.utils").load_mappings "git_worktree"
     end,

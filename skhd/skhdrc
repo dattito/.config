@@ -16,7 +16,7 @@ lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI
 lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove
 
 ralt - s : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-ralt - a : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+ralt - d : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 #ctrl - z : yabai -m window --focus west || yabai -m space --focus prev || yabai -m space --focus last
 #ctrl - u : yabai -m window --focus south
@@ -37,8 +37,8 @@ ralt - a : yabai -m window --focus stack.next || yabai -m window --focus stack.f
 #alt + shift - d : yabai -m space --destroy
 #alt + shift - n : yabai -m space --create && yabai -m window --space next && yabai -m space --focus next
 
-#ralt + rcmd - s : yabai -m window --display prev || yabai -m window --display last; yabai -m display --focus prev || yabai -m display --focus last
-#ralt + rcmd - a : yabai -m window --display next || yabai -m window --display first; yabai -m display --focus next || yabai -m display --focus first
+ralt - a : yabai -m window --display prev || yabai -m window --display last; yabai -m display --focus prev || yabai -m display --focus last
+ralt - f : yabai -m window --display next || yabai -m window --display first; yabai -m display --focus next || yabai -m display --focus first
 
 #change focus between external displays (left and right)
 #ralt - w: yabai -m display --focus next || yabai -m display --focus first
