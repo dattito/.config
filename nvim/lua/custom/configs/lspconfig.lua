@@ -3,7 +3,11 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 require("mason-lspconfig").setup {
   ensure_installed = nil,
-  automatic_installation = true,
+  automatic_installation = {
+    exclude = {
+      "rust_analyzer",
+    },
+  },
 }
 
 local lspconfig = require "lspconfig"
@@ -21,7 +25,6 @@ local servers = {
   "tailwindcss",
   "pyright",
   "sqlls",
-  "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
@@ -65,6 +68,26 @@ lspconfig.gopls.setup {
       completeUnimported = true,
       analyses = {
         unusedparams = true,
+      },
+    },
+  },
+}
+
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "rust" },
+  root_dir = util.root_pattern "Cargo.toml",
+  settings = {
+    ["rust-analyzer"] = {
+      check = {
+        features = "all",
+        command = "clippy",
+      },
+      diagnostics = {
+        experimental = {
+          enable = true,
+        },
       },
     },
   },
