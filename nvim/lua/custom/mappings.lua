@@ -1,5 +1,4 @@
 local M = {}
-
 M.tmux = {
   plugin = true,
   n = {
@@ -178,6 +177,18 @@ M.git_worktree = {
         require("telescope.builtin").find_files { cwd = "~/repositories" }
       end,
       "Find files in repositories",
+    },
+  },
+}
+
+M.mini_files = {
+  plugin = true,
+  n = {
+    ["<leader>."] = {
+      function()
+        require("mini.files").open()
+      end,
+      "Open minifiles",
     },
   },
 }

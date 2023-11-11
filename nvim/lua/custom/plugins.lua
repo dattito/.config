@@ -423,6 +423,18 @@ local plugins = {
   --     vim.g.rustfmt_autosave = 1
   --   end,
   -- },
+
+  {
+    "echasnovski/mini.files",
+    version = false,
+    -- lazy = false,
+    config = function()
+      require("mini.files").setup()
+    end,
+    init = function()
+      require("core.utils").load_mappings "mini_files"
+    end,
+  },
 }
 
 return plugins
