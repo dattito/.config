@@ -1,5 +1,5 @@
 # WORK
-#ralt - 1 : open -a iTerm
+#ralt - 1 : open -a kitty
 #ralt + shift - 1 : open -a Slack
 #ralt - 2 : open -a "Google Chrome"
 #ralt + shift - 2 : open -a Safari
@@ -14,7 +14,7 @@
 #lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
 
 # UNI
-ralt - 1 : open -a iTerm
+ralt - 1 : open -a kitty
 ralt + shift - 1 : open -a Obsidian
 ralt - 2 : open -a "Google Chrome"
 ralt + shift - 2 : open -a Safari
