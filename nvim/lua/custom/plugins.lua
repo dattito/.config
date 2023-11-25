@@ -52,6 +52,12 @@ local plugins = {
     end,
   },
   {
+	"neovim/nvim-lspconfig",
+	init = function()
+		require("core.utils").load_mappings "lsp_config"
+	end,
+  },
+  {
     "williamboman/mason-lspconfig.nvim",
     dependencies = {
       "williamboman/mason.nvim",

@@ -193,4 +193,14 @@ M.mini_files = {
   },
 }
 
+M.lsp_config = {
+  plugin = true,
+  n = {
+    ["<leader>lr"] = {
+      "<CMD> LspRestart<CR>",
+      "Restart LSP",
+    },
+  },
+}
+
 return M

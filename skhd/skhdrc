@@ -28,6 +28,8 @@ ralt - 6 : open -a "Preview"
 ralt - 7 : open -a Docker
 lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
 
+cmd - j : skhd -k "0x33"
+
 
 lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
 lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove
