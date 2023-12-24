@@ -52,10 +52,10 @@ local plugins = {
     end,
   },
   {
-	"neovim/nvim-lspconfig",
-	init = function()
-		require("core.utils").load_mappings "lsp_config"
-	end,
+    "neovim/nvim-lspconfig",
+    init = function()
+      require("core.utils").load_mappings "lsp_config"
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
@@ -72,11 +72,11 @@ local plugins = {
   },
   {
     "jay-babu/mason-null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "VeryLazy" },
     dependencies = {
       "williamboman/mason.nvim",
       "nvim-lua/plenary.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
+      "nvimtools/none-ls.nvim",
     },
     config = function()
       require "custom.configs.null-ls" -- require your null-ls config here (example below)
