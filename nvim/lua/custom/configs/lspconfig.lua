@@ -89,6 +89,9 @@ lspconfig.rust_analyzer.setup {
           enable = true,
         },
       },
+      cachePriming = {
+        enable = false,
+      },
     },
   },
 }
