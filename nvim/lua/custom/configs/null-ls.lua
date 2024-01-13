@@ -3,7 +3,7 @@ local null_ls = require "null-ls"
 local sources = {
   null_ls.builtins.formatting.gofumpt,
   null_ls.builtins.formatting.goimports_reviser,
-  null_ls.builtins.formatting.prettier,
+  null_ls.builtins.formatting.prettierd,
   null_ls.builtins.formatting.stylua,
   null_ls.builtins.formatting.latexindent,
   null_ls.builtins.formatting.rustfmt,
