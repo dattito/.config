@@ -16,8 +16,8 @@
 # UNI
 ralt - 1 : open -a kitty
 ralt + shift - 1 : open -a Obsidian
-ralt - 2 : open -a Firefox 
-ralt + rcmd - 2 : open -a "Google Chrome"
+ralt - 2 : open -a Arc 
+ralt + cmd - 2 : open -a "Firefox"
 ralt + shift - 2 : open -a Safari
 ralt - 3 : open -a Music
 ralt + shift - 3 : open -a "Microsoft Teams classic"
