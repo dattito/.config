@@ -67,12 +67,12 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
-    event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
     build = ":! brew install node go ripgrep",
   },
   {
     "jay-babu/mason-null-ls.nvim",
-    event = { "VeryLazy" },
+    event = "VeryLazy",
     dependencies = {
       "williamboman/mason.nvim",
       "nvim-lua/plenary.nvim",
@@ -233,7 +233,7 @@ local plugins = {
   {
     "ahmedkhalf/project.nvim",
     dependencies = "nvim-telescope/telescope.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
     config = function()
       require("project_nvim").setup {
         scope_chdir = "tab",
@@ -362,7 +362,7 @@ local plugins = {
   },
   {
     "tpope/vim-surround",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
   },
   -- {
   --   "simrat39/rust-tools.nvim",
