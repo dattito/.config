@@ -499,6 +499,19 @@ local plugins = {
   --     "rcarriga/nvim-notify",
   --   },
   -- },
+  {
+    "chomosuke/typst-preview.nvim",
+    ft = "typst",
+    version = "0.1.*",
+    build = function()
+      require("typst-preview").update()
+    end,
+  },
+  {
+    "kaarmu/typst.vim",
+    ft = "typst",
+    -- lazy = false,
+  },
 }
 
 return plugins
