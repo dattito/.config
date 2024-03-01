@@ -512,6 +512,11 @@ local plugins = {
     ft = "typst",
     -- lazy = false,
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    deps = "nvim-treesitter/nvim-treesitter",
+    event = "VeryLazy",
+  },
 }
 
 return plugins
