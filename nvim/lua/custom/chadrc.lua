@@ -14,11 +14,11 @@ M.ui = {
   -- },
 
   statusline = {
-    theme = "minimal",
+    theme = "vscode",
   },
-  -- tabufline = {
-  --   enabled = false,
-  -- },
+  tabufline = {
+    enabled = false,
+  },
   extended_integrations = { "alpha", "notify", "todo", "rainbowdelimiters", "codeactionmenu" },
 }
 
