@@ -524,7 +524,7 @@ local plugins = {
             lookahead = true,
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V", -- linewise
+              ["@function.outer"] = "V",  -- linewise
               ["@class.outer"] = "<c-v>", -- blockwise
             },
             keymaps = {
@@ -538,11 +538,11 @@ local plugins = {
             enable = true,
             swap_next = {
               ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-              ["<leader>nm"] = "@function.outer", -- swap function with next
+              ["<leader>nm"] = "@function.outer",  -- swap function with next
             },
             swap_previous = {
               ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-              ["<leader>pm"] = "@function.outer", -- swap function with previous
+              ["<leader>pm"] = "@function.outer",  -- swap function with previous
             },
           },
           move = {
@@ -600,6 +600,14 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter-context",
     deps = "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
+  },
+  {
+    "olexsmir/gopher.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    ft = "go",
   },
 }
 
