@@ -9,6 +9,16 @@ M.tmux = {
   },
 }
 
+M.zellij = {
+  plugin = true,
+  n = {
+    ["<C-h>"] = { "<cmd> ZellijNavigateLeft<CR>", "Window left" },
+    ["<C-l>"] = { "<cmd> ZellijNavigateRight<CR>", "Window right" },
+    ["<C-j>"] = { "<cmd> ZellijNavigateDown<CR>", "Window down" },
+    ["<C-k>"] = { "<cmd> ZellijNavigateUp<CR>", "Window up" },
+  },
+}
+
 M.vimtex = {
   plugin = true,
   n = {

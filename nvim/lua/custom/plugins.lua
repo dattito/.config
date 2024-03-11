@@ -83,12 +83,23 @@ local plugins = {
       require "custom.configs.null-ls" -- require your null-ls config here (example below)
     end,
   },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   lazy = false,
+  --   init = function()
+  --     require("core.utils").load_mappings "vimtex"
+  --   end,
+  -- },
   {
-    "christoomey/vim-tmux-navigator",
+    "Lilja/zellij.nvim",
+    -- init = function()
+    --   require("core.utils").load_mappings "zellij"
+    -- end,
+    opts = {
+      vimTmuxNavigatorKeybinds = true,
+      whichKeyEnabled = true,
+    },
     lazy = false,
-    init = function()
-      require("core.utils").load_mappings "vimtex"
-    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -608,6 +619,10 @@ local plugins = {
       "nvim-treesitter/nvim-treesitter",
     },
     ft = "go",
+  },
+  {
+    "imsnif/kdl.vim",
+    ft = "kdl",
   },
 }
 
