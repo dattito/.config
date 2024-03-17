@@ -17,7 +17,7 @@ M.ui = {
     theme = "vscode",
   },
   tabufline = {
-    enabled = false,
+    enabled = true,
   },
   extended_integrations = { "alpha", "notify", "todo", "rainbowdelimiters", "codeactionmenu" },
 }

@@ -535,7 +535,7 @@ local plugins = {
             lookahead = true,
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V",  -- linewise
+              ["@function.outer"] = "V", -- linewise
               ["@class.outer"] = "<c-v>", -- blockwise
             },
             keymaps = {
@@ -549,11 +549,11 @@ local plugins = {
             enable = true,
             swap_next = {
               ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-              ["<leader>nm"] = "@function.outer",  -- swap function with next
+              ["<leader>nm"] = "@function.outer", -- swap function with next
             },
             swap_previous = {
               ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-              ["<leader>pm"] = "@function.outer",  -- swap function with previous
+              ["<leader>pm"] = "@function.outer", -- swap function with previous
             },
           },
           move = {
@@ -606,6 +606,7 @@ local plugins = {
       vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
       vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
     end,
+    enabled = false,
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
