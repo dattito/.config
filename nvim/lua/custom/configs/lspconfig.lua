@@ -21,10 +21,11 @@ local servers = {
   "texlab",
   "eslint",
   "marksman",
-  "yamlls",
   "tailwindcss",
   "pyright",
+  "ruff_lsp",
   "sqlls",
+  "terraformls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -100,5 +101,29 @@ lspconfig.typst_lsp.setup {
   settings = {
     exportPdf = "onType", -- Choose onType, onSave or never.
     -- serverPath = "" -- Normally, there is no need to uncomment it.
+  },
+}
+
+lspconfig.jsonls.setup {
+  settings = {
+    json = {
+      schemas = require("schemastore").json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
+
+lspconfig.yamlls.setup {
+  settings = {
+    yaml = {
+      schemaStore = {
+        -- You must disable built-in schemaStore support if you want to use
+        -- this plugin and its advanced options like `ignore`.
+        enable = false,
+        -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+        url = "",
+      },
+      schemas = require("schemastore").yaml.schemas(),
+    },
   },
 }

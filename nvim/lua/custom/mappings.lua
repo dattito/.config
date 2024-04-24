@@ -213,4 +213,14 @@ M.lsp_config = {
   },
 }
 
+M.typst = {
+  plugin = true,
+  n = {
+    ["<leader>tt"] = {
+      "<CMD> TypstPreviewToggle<CR>",
+      "Toggle Typst Preview",
+    },
+  },
+}
+
 return M

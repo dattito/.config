@@ -53,6 +53,7 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = "b0o/schemastore.nvim",
     init = function()
       require("core.utils").load_mappings "lsp_config"
     end,
@@ -90,17 +91,17 @@ local plugins = {
   --     require("core.utils").load_mappings "vimtex"
   --   end,
   -- },
-  {
-    "Lilja/zellij.nvim",
-    -- init = function()
-    --   require("core.utils").load_mappings "zellij"
-    -- end,
-    opts = {
-      vimTmuxNavigatorKeybinds = true,
-      whichKeyEnabled = true,
-    },
-    lazy = false,
-  },
+  -- {
+  --   "Lilja/zellij.nvim",
+  --   -- init = function()
+  --   --   require("core.utils").load_mappings "zellij"
+  --   -- end,
+  --   opts = {
+  --     vimTmuxNavigatorKeybinds = true,
+  --     whichKeyEnabled = true,
+  --   },
+  --   lazy = false,
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -500,7 +501,7 @@ local plugins = {
         },
       }
     end,
-    command = "Hardtime",
+    cmd = "Hardtime",
   },
   -- {
   --   "folke/noice.nvim",
@@ -513,15 +514,20 @@ local plugins = {
   {
     "chomosuke/typst-preview.nvim",
     ft = "typst",
-    version = "0.1.*",
+    version = "0.*.*",
     build = function()
       require("typst-preview").update()
     end,
+    init = function()
+      require("core.utils").load_mappings "typst"
+    end,
+    opts = {
+      invert_colors = "auto",
+    },
   },
   {
     "kaarmu/typst.vim",
     ft = "typst",
-    -- lazy = false,
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
@@ -535,7 +541,7 @@ local plugins = {
             lookahead = true,
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V", -- linewise
+              ["@function.outer"] = "V",  -- linewise
               ["@class.outer"] = "<c-v>", -- blockwise
             },
             keymaps = {
@@ -549,11 +555,11 @@ local plugins = {
             enable = true,
             swap_next = {
               ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-              ["<leader>nm"] = "@function.outer", -- swap function with next
+              ["<leader>nm"] = "@function.outer",  -- swap function with next
             },
             swap_previous = {
               ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-              ["<leader>pm"] = "@function.outer", -- swap function with previous
+              ["<leader>pm"] = "@function.outer",  -- swap function with previous
             },
           },
           move = {
@@ -606,7 +612,7 @@ local plugins = {
       vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
       vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
     end,
-    enabled = false,
+    enabled = true,
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
@@ -624,6 +630,18 @@ local plugins = {
   {
     "imsnif/kdl.vim",
     ft = "kdl",
+  },
+  {
+    "pwntester/octo.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    cmd = "Octo",
+    config = function()
+      require("octo").setup()
+    end,
   },
 }
 
