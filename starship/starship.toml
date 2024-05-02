@@ -17,7 +17,7 @@ disabled = true
 disabled = false
 
 [git_status]
-disabled = true
+disabled = false
 
 [docker_context]
 format = '(with 🐳)'
