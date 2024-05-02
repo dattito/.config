@@ -25,6 +25,9 @@ format = '(with 🐳)'
 [package]
 disabled = true
 
+[aws]
+disabled = true
+
 # --------- THEME
 
 [palettes.catppuccin_mocha]
