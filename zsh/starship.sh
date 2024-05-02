@@ -2,4 +2,6 @@
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
-eval "$(starship init zsh)"
+if [[ -x "$(command -v zoxide)" ]]; then
+  eval "$(starship init zsh)"
+fi
