@@ -541,7 +541,7 @@ local plugins = {
             lookahead = true,
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V",  -- linewise
+              ["@function.outer"] = "V", -- linewise
               ["@class.outer"] = "<c-v>", -- blockwise
             },
             keymaps = {
@@ -555,11 +555,11 @@ local plugins = {
             enable = true,
             swap_next = {
               ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-              ["<leader>nm"] = "@function.outer",  -- swap function with next
+              ["<leader>nm"] = "@function.outer", -- swap function with next
             },
             swap_previous = {
               ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-              ["<leader>pm"] = "@function.outer",  -- swap function with previous
+              ["<leader>pm"] = "@function.outer", -- swap function with previous
             },
           },
           move = {
@@ -642,6 +642,50 @@ local plugins = {
     config = function()
       require("octo").setup()
     end,
+  },
+  {
+    "mistricky/codesnap.nvim",
+    build = "make",
+    keys = {
+      { "<leader>cc", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
+      { "<leader>cs", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Downloads" },
+    },
+    opts = {
+      save_path = "~/Downloads",
+      -- has_breadcrumbs = true,
+      bg_theme = "default",
+      -- bg_color = "#00000000",
+      watermark = "",
+    },
+  },
+  {
+    "OlegGulevskyy/better-ts-errors.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    ft = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "xml",
+      "php",
+      "markdown",
+      "astro",
+      "glimmer",
+      "handlebars",
+      "hbs",
+    },
+    config = {
+      keymaps = {
+        toggle = "<leader>dd", -- default '<leader>dd'
+        go_to_definition = "<leader>dx", -- default '<leader>dx'
+      },
+    },
   },
 }
 
