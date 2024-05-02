@@ -5,6 +5,7 @@ alias cd=z
 alias cat=bat
 alias v="fzf |xargs nvim"
 alias vz="vim ~/.zshrc"
+alias vo="vim +Oil"
 alias t="tree -I node_modules -I .git -a"
 alias lc="latexmk -pdf -dvi- -shell-escape -output-directory=output"
 alias lw="watchexec -i \"output/**\" 'latexmk -pdf -dvi- -shell-escape -output-directory=output'"
@@ -22,6 +23,10 @@ alias lS='eza -1 --color=always --group-directories-first --icons'
 alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
 
 function vy() {
   cd "$1" && vim +Oil
