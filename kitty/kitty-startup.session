@@ -1,1 +1,2 @@
 cd /Users/I568850/repositories
+launch zsh -c /opt/homebrew/bin/zellij attach -c
