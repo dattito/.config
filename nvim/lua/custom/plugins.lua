@@ -1,3 +1,6 @@
+package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.luarocks/share/lua/5.1/?/init.lua"
+package.path = package.path .. ";" .. vim.fn.expand "$HOME" .. "/.luarocks/share/lua/5.1/?.lua"
+
 local plugins = {
   {
     "nvim-telescope/telescope.nvim",
@@ -541,7 +544,7 @@ local plugins = {
             lookahead = true,
             selection_modes = {
               ["@parameter.outer"] = "v", -- charwise
-              ["@function.outer"] = "V", -- linewise
+              ["@function.outer"] = "V",  -- linewise
               ["@class.outer"] = "<c-v>", -- blockwise
             },
             keymaps = {
@@ -555,11 +558,11 @@ local plugins = {
             enable = true,
             swap_next = {
               ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-              ["<leader>nm"] = "@function.outer", -- swap function with next
+              ["<leader>nm"] = "@function.outer",  -- swap function with next
             },
             swap_previous = {
               ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-              ["<leader>pm"] = "@function.outer", -- swap function with previous
+              ["<leader>pm"] = "@function.outer",  -- swap function with previous
             },
           },
           move = {
@@ -647,7 +650,7 @@ local plugins = {
     "mistricky/codesnap.nvim",
     build = "make",
     keys = {
-      { "<leader>cc", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
+      { "<leader>cc", "<cmd>CodeSnap<cr>",     mode = "x", desc = "Save selected code snapshot into clipboard" },
       { "<leader>cs", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Downloads" },
     },
     opts = {
@@ -682,9 +685,45 @@ local plugins = {
     },
     config = {
       keymaps = {
-        toggle = "<leader>dd", -- default '<leader>dd'
+        toggle = "<leader>dd",           -- default '<leader>dd'
         go_to_definition = "<leader>dx", -- default '<leader>dx'
       },
+    },
+  },
+  {
+    "vhyrro/luarocks.nvim",
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+      rocks = { "magick" },
+    },
+  },
+  {
+    "3rd/image.nvim",
+    dependencies = { "luarocks.nvim" },
+    config = function()
+      require("image").setup()
+    end,
+  },
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim", -- required by telescope
+      "MunifTanjim/nui.nvim",
+
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+
+      "3rd/image.nvim",
+    },
+    lazy = "leetcode.nvim" ~= vim.fn.argv()[1],
+    opts = {
+      lang = "python3",
+      arg = "leetcode.nvim",
+      image_support = true,
     },
   },
 }
