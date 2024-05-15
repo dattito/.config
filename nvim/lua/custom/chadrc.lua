@@ -7,7 +7,7 @@ M.mappings = require "custom.mappings"
 M.ui = {
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "one_light" },
-  transparency = false,
+  transparency = true,
 
   -- nvdash = {
   --   load_on_startup = true,

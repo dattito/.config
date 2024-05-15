@@ -3,7 +3,6 @@
 alias vim=nvim
 alias cd=z
 alias cat=bat
-alias v="fzf |xargs nvim"
 alias vz="vim ~/.zshrc"
 alias vo="vim +Oil"
 alias t="tree -I node_modules -I .git -a"
@@ -30,6 +29,10 @@ alias ......="cd ../../../../.."
 
 function vy() {
   cd "$1" && vim +Oil
+}
+
+function v() {
+   file=$(fzf --preview='bat --color=always --style=numbers {}'); [ -f "$file" ] && vim $file || true
 }
 
 function load_nvm() {
