@@ -75,6 +75,7 @@ bind "Ctrl h" {
         bind "m" { SwitchToMode "Resize"; }
         bind "h" { SwitchToMode "Move"; }
         bind "s" { SwitchToMode "Scroll"; }
+        bind "z" { SwitchToMode "Search"; }
         bind "o" { SwitchToMode "Session"; }
         bind "c" { NewTab; SwitchToMode "Normal"; }
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
