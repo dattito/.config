@@ -1,10 +1,10 @@
 #!/bin/zsh
 
-export ZELLIJ_AUTO_ATTACH=true
-export ZELLIJ_AUTO_EXIT=true
-
-
 if [[ -x "$(command -v zellij)" ]]; then
+
+  export ZELLIJ_AUTO_ATTACH="true"
+  export ZELLIJ_AUTO_EXIT="true"
+
   function zr () { zellij run --name "$*" -- zsh -ic "$*";}
   function zrf () { zellij run --name "$*" --floating -- zsh -ic "$*";}
   function ze () { zellij edit "$*";}
