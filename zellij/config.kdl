@@ -56,10 +56,10 @@ keybinds {
 }
 
 plugins {
-    tab-bar { path "tab-bar"; }
+    // tab-bar { path "tab-bar"; }
     // status-bar { path "status-bar"; }
-    strider { path "strider"; }
-    compact-bar { path "compact-bar"; }
+    // strider { path "strider"; }
+    // compact-bar { path "compact-bar"; }
     session-manager { path "session-manager"; }
 }
 

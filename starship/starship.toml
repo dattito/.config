@@ -5,6 +5,7 @@ palette = "catppuccin_mocha"
 [directory]
 truncate_to_repo = true
 truncation_symbol = '.../'
+style = "bold sky"
 
 [character]
 success_symbol = '[➜](bold green)'
@@ -27,6 +28,9 @@ disabled = true
 
 [aws]
 disabled = true
+
+[cmd_duration]
+show_milliseconds = true
 
 # --------- THEME
 
