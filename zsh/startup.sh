@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-
 source "$HOME/.config/zsh/fzf.sh"
 source "$HOME/.config/zsh/antidote.sh"
 source "$HOME/.config/zsh/completion.sh"
