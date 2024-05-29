@@ -19,4 +19,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- TODO: Delete custom root
-require("lazy").setup("essi_datti.plugins")
+require("lazy").setup("essi_datti.plugins", {
+  defaults = {
+    lazy = true,
+  },
+})

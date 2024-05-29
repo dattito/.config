@@ -1,0 +1,46 @@
+return {
+  "startup-nvim/startup.nvim",
+  dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  config = function()
+    require("startup").setup({
+      header = {
+        type = "text",
+        oldfiles_directory = false,
+        align = "center",
+        fold_section = false,
+        title = "Header",
+        margin = 5,
+        content = {
+          [[]],
+          [[]],
+          [[]],
+          [[]],
+          [[]],
+          [[]],
+          [[ ______     ______     ______     __        _____     ______     ______   ______   __    ]],
+          [[/\  ___\   /\  ___\   /\  ___\   /\ \      /\  __-.  /\  __ \   /\__  _\ /\__  _\ /\ \   ]],
+          [[\ \  __\   \ \___  \  \ \___  \  \ \ \     \ \ \/\ \ \ \  __ \  \/_/\ \/ \/_/\ \/ \ \ \  ]],
+          [[ \ \_____\  \/\_____\  \/\_____\  \ \_\     \ \____-  \ \_\ \_\    \ \_\    \ \_\  \ \_\ ]],
+          [[  \/_____/   \/_____/   \/_____/   \/_/      \/____/   \/_/\/_/     \/_/     \/_/   \/_/ ]],
+        },
+        highlight = "Statement",
+        default_color = "#FFFFFF",
+        oldfiles_amount = 0,
+      },
+      header_2 = {
+        type = "text",
+        oldfiles_directory = false,
+        align = "center",
+        fold_section = false,
+        title = "Quote",
+        margin = 5,
+        content = require("startup.functions").quote(),
+        highlight = "Constant",
+        default_color = "",
+        oldfiles_amount = 0,
+      },
+      parts = { "header", "header_2" },
+    })
+  end,
+  lazy = false,
+}
