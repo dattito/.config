@@ -10,7 +10,6 @@ htop
 iterm2
 karabiner
 legendary
-nvim
 synadm.yaml
 thefuck
 tmux
@@ -29,3 +28,4 @@ gcloud
 broot
 gcloud
 lazysql
+jgit
