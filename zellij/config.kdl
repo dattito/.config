@@ -15,10 +15,30 @@ keybinds {
         bind "Alt x" { CloseFocus; SwitchToMode "Normal"; }
         bind "Alt w" { ToggleFloatingPanes;}
         bind "Alt t" { NewTab;}
-        bind "Ctrl h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Ctrl l" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Ctrl j" "Alt Down" { MoveFocus "Down"; }
-        bind "Ctrl k" "Alt Up" { MoveFocus "Up"; }
+        bind "Ctrl h" {
+          MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+            name "move_focus";
+            payload "left";
+          };
+        }
+        bind "Ctrl j" {
+          MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+            name "move_focus";
+            payload "down";
+          };
+        }
+        bind "Ctrl k" {
+          MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+            name "move_focus";
+            payload "up";
+          };
+        }
+        bind "Ctrl l" {
+          MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
+            name "move_focus";
+            payload "right";
+          };
+        }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
