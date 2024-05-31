@@ -84,17 +84,17 @@ return {
 		end
 
 		ins_left({
-			"filename",
-			cond = conditions.buffer_not_empty,
-			color = { gui = "bold" },
-		})
-
-		ins_left({
 			-- mode component
 			function()
 				return vim.fn.mode()
 			end,
-			color = { fg = colors.fg },
+			color = { fg = colors.bg, bg = colors.fg },
+		})
+
+		ins_left({
+			"filename",
+			cond = conditions.buffer_not_empty,
+			color = { gui = "bold" },
 		})
 
 		ins_left({ "location" })
