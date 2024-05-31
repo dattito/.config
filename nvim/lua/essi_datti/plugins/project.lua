@@ -7,5 +7,15 @@ return {
 			scope_chdir = "tab",
 			detection_methods = { "pattern" },
 		})
+		require("telescope").load_extension("projects")
 	end,
+	keys = {
+		{
+			"<leader>fp",
+			function()
+				require("telescope").extensions.projects.projects({})
+			end,
+			desc = "Find all projects",
+		},
+	},
 }

@@ -1,4 +1,4 @@
-local excluded_files = "{.git,node_modules,target,dist}"
+local excluded_files = "{.git,node_modules,target,dist,.venv}"
 
 return {
 	"nvim-telescope/telescope.nvim",
