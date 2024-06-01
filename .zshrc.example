@@ -1,0 +1,2 @@
+# Minimal usage
+source "$HOME/.config/zsh/startup.sh"
