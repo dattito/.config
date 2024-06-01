@@ -4,3 +4,4 @@
 .git
 .zshrc.example
 Justfile
+README.md
