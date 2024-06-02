@@ -20,5 +20,5 @@ vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 vim.keymap.set("x", "p", 'p:let @+=@0<CR>:let @"=@0<CR>', { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>oi", function()
-	print(vim.fn.getcwd())
+  print(vim.fn.getcwd())
 end, { desc = "Print CWD", noremap = true, expr = true })

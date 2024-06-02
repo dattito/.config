@@ -58,7 +58,13 @@ return {
 			end,
 			"Floating diagnostic",
 		},
-
+		{
+			"<leader>ra",
+			function()
+				vim.lsp.buf.rename()
+			end,
+			"Rename variable",
+		},
 		{
 			"[d",
 			function()
