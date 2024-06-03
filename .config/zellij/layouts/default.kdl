@@ -26,7 +26,7 @@ layout {
 
 
                 tab_normal   "#[fg=#cdd6f4] {name} "
-                tab_active   "#[bg=#b4befe,fg=black,bold] {name} "
+                tab_active   "#[bg=#9399b2,fg=#313244,bold] {name} "
             } 
         }
     }
