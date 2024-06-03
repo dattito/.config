@@ -40,6 +40,7 @@ return {
 			sources = {
 				-- { name = "crates" },
 				{ name = "nvim_lsp" },
+				{ name = "lazydev" },
 				{ name = "copilot" },
 				{ name = "luasnip" },
 				-- { name = "nvim_lua" },
