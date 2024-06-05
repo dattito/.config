@@ -16,6 +16,11 @@ return {
 			"Find all files",
 		},
 		{
+			"<leader>fo",
+			"<cmd>Telescope oldfiles<cr>",
+			"Find old files",
+		},
+		{
 			"<leader>fb",
 			"<cmd>Telescope buffers<cr>",
 			"Find buffers",

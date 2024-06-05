@@ -10,7 +10,7 @@ if [[ -x "$(command -v zellij)" ]]; then
   function ze () { zellij edit "$*";}
   function zef () { zellij edit --floating "$*";}
 
-  if [ "$NO_ITERM" != "1" ]; then
+  if [ "$NO_MULTIPLEXER" != "1" ]; then
     # ZSH_TMUX_AUTOSTART=true
     eval "$(zellij setup --generate-auto-start zsh)"
   fi

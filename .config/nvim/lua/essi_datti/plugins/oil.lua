@@ -4,7 +4,9 @@ return {
 	cmd = "Oil",
 	opts = {
 		skip_confirm_for_simple_edits = true,
-		show_hidden = true,
+		view_options = {
+			show_hidden = true,
+		},
 	},
 	keys = {
 		{ "-", "<cmd>Oil<cr>", "open file explorer" },

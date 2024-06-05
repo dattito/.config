@@ -8,8 +8,6 @@ opt.number = true
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.cursorline = true
-
 opt.termguicolors = true
 opt.clipboard:append("unnamedplus")
 
