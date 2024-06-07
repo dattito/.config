@@ -6,10 +6,10 @@ command_timeout = 100
 [directory]
 truncate_to_repo = true
 truncation_symbol = '.../'
-style = "bold sky"
+style = "bold lavender"
 
 [character]
-success_symbol = '[➜](bold green)'
+success_symbol = '[➜](bold lavender)'
 error_symbol = '[➜](bold red)'
 
 [gcloud]
@@ -17,9 +17,13 @@ disabled = true
 
 [git_metrics]
 disabled = false
+added_style = "lavender"
+deleted_style = "lavender"
+format = '[\[+$added/-$deleted\]]($added_style) '
 
 [git_status]
 disabled = false
+style = "lavender"
 
 [docker_context]
 format = '(with 🐳)'
@@ -32,6 +36,9 @@ disabled = true
 
 [cmd_duration]
 show_milliseconds = true
+
+[git_branch]
+style = "bold lavender"
 
 # --------- THEME
 
@@ -66,8 +73,8 @@ crust = "#11111b"
 # ---------- PRESET NO VERSION NUMBERS
 
 [bun]
-symbol = "🍙 "
-format = "via [$symbol]($style)"
+symbol = "JS "
+format = "in [$symbol]($style)"
 
 [buf]
 format = "via [$symbol]($style)"
@@ -86,15 +93,18 @@ format = "via [$symbol]($style)"
 
 [dart]
 format = "via [$symbol]($style)"
+symbol = 'Dart '
 
 [deno]
 format = "via [$symbol]($style)"
+symbol = 'JS '
 
 [dotnet]
 format = "[$symbol(🎯 $tfm )]($style)"
 
 [elixir]
 format = 'via [$symbol]($style)'
+symbol = 'Elixir  '
 
 [elm]
 format = 'via [$symbol]($style)'
@@ -106,7 +116,8 @@ format = 'via [$symbol]($style)'
 format = 'via [$symbol]($style)'
 
 [golang]
-format = 'via [$symbol]($style)'
+format = 'in [$symbol]($style)'
+symbol = 'Go  '
 
 [gradle]
 format = 'via [$symbol]($style)'
@@ -116,9 +127,11 @@ format = 'via [$symbol]($style)'
 
 [helm]
 format = 'via [$symbol]($style)'
+symbol = 'Helm '
 
 [java]
 format = 'via [$symbol]($style)'
+symbol = 'Java '
 
 [julia]
 format = 'via [$symbol]($style)'
@@ -137,9 +150,10 @@ format = 'via [$symbol]($style)'
 
 [nodejs]
 format = 'via [$symbol]($style)'
+symbol = 'JS '
 
 [ocaml]
-format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
+format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style) '
 
 [opa]
 format = 'via [$symbol]($style)'
@@ -157,7 +171,8 @@ format = 'via [$symbol$stack]($style)'
 format = 'via [$symbol]($style)'
 
 [python]
-format = 'via [$symbol]($style)'
+format = 'in [$symbol]($style)'
+symbol = 'Python  '
 
 [quarto]
 format = 'via [$symbol]($style)'
@@ -175,7 +190,8 @@ format = 'via [$symbol]($style)'
 format = 'via [$symbol]($style)'
 
 [rust]
-format = 'via [$symbol]($style)'
+format = 'in [$symbol]($style)'
+symbol = 'Rust 󱘗 '
 
 [solidity]
 format = 'via [$symbol]($style)'
@@ -194,3 +210,4 @@ format = 'via [$symbol]($style)'
 
 [zig]
 format = 'via [$symbol]($style)'
+symbol = 'Zig '
