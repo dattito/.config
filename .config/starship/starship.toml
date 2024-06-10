@@ -3,6 +3,30 @@
 palette = "catppuccin_mocha"
 command_timeout = 100
 
+format = """
+$all\
+$fill\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
+right_format="""
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status"""
+
+[fill]
+symbol = '-'
+style = 'surface1'
+
 [directory]
 truncate_to_repo = true
 truncation_symbol = '.../'
@@ -200,6 +224,7 @@ format = 'via [$symbol]($style)'
 
 [typst]
 format = 'via [$symbol]($style)'
+symbol = 'Typst 󰬛 '
 
 [swift]
 format = 'via [$symbol]($style)'
@@ -213,3 +238,8 @@ format = 'via [$symbol]($style)'
 [zig]
 format = 'via [$symbol]($style)'
 symbol = 'Zig '
+
+[gleam]
+format = 'via [$symbol]($style)'
+symbol = 'Gleam   '
+

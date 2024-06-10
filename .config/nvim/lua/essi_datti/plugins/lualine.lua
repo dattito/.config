@@ -135,18 +135,6 @@ return {
 			icon = "",
 		})
 
-		ins_right({
-			"diff",
-			-- Is it me or the symbol for modified us really weird
-			symbols = { added = " ", modified = " ", removed = " " },
-			diff_color = {
-				added = { fg = colors.fg },
-				modified = { fg = colors.fg },
-				removed = { fg = colors.fg },
-			},
-			cond = conditions.hide_in_width,
-		})
-
 		-- Now don't forget to initialize lualine
 		lualine.setup(config)
 	end,
