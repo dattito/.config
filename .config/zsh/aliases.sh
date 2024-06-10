@@ -45,3 +45,7 @@ function cv() {
   zi
   v
 }
+
+function bu() {
+  zrf brew upgrade
+}
