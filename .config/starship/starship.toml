@@ -43,7 +43,7 @@ disabled = true
 disabled = false
 added_style = "dattito_line"
 deleted_style = "dattito_line"
-format = '[\[+$added/-$deleted\]]($added_style)'
+format = '([\[+$added/-$deleted\]]($added_style)) '
 
 [git_status]
 disabled = false
