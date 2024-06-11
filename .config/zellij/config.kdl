@@ -26,8 +26,8 @@ keybinds {
         bind "d" { Detach; }
         bind "p" { SwitchToMode "Pane"; }
         bind "t" { SwitchToMode "Tab"; }
-        bind "m" { SwitchToMode "Resize"; }
-        bind "h" { SwitchToMode "Move"; }
+        bind "h" { SwitchToMode "Resize"; }
+        bind "m" { SwitchToMode "Move"; }
         bind "s" { SwitchToMode "Scroll"; }
         bind "z" { SwitchToMode "Search"; }
         bind "o" { SwitchToMode "Session"; }
