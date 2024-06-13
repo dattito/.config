@@ -54,6 +54,7 @@ return {
       tailwindcss = {},
       pyright = {},
       ruff_lsp = {},
+      prismals = {},
       sqlls = {},
       terraformls = {},
       gleam = {},
