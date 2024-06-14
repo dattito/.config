@@ -4,32 +4,34 @@ palette = "catppuccin_mocha"
 command_timeout = 100
 
 format = """
-$all\
+$directory\
 $fill\
 $line_break\
-$jobs\
-$battery\
-$time\
-$status\
 $os\
 $container\
 $shell\
 $character"""
 
 right_format="""
+$all\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
-$git_status"""
+$git_status\
+$jobs\
+$battery\
+$time\
+$status"""
 
 [fill]
 symbol = '-'
 style = 'surface1'
 
 [directory]
-truncate_to_repo = true
+truncate_to_repo = false
 truncation_symbol = '.../'
+truncation_length = 10
 style = "bold dattito_line"
 
 [character]
@@ -50,7 +52,7 @@ disabled = false
 style = "dattito_line"
 
 [docker_context]
-format = '(with 🐳)'
+format = '(using Docker 🐳)'
 
 [package]
 disabled = true
