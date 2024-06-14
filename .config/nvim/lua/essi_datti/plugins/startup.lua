@@ -23,11 +23,10 @@ return {
           [[ \ \_____\  \/\_____\  \/\_____\  \ \_\     \ \____-  \ \_\ \_\    \ \_\    \ \_\  \ \_\ ]],
           [[  \/_____/   \/_____/   \/_____/   \/_/      \/____/   \/_/\/_/     \/_/     \/_/   \/_/ ]],
         },
-        highlight = "Statement",
-        default_color = "#FFFFFF",
+        highlight = "Constant",
         oldfiles_amount = 0,
       },
-      header_2 = {
+      quote = {
         type = "text",
         oldfiles_directory = false,
         align = "center",
@@ -35,11 +34,11 @@ return {
         title = "Quote",
         margin = 5,
         content = require("startup.functions").quote(),
-        highlight = "Constant",
+        highlight = "Statement",
         default_color = "",
         oldfiles_amount = 0,
       },
-      parts = { "header", "header_2" },
+      parts = { "header", "quote" },
     })
   end,
   lazy = false,

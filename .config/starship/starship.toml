@@ -33,8 +33,8 @@ truncation_symbol = '.../'
 style = "bold dattito_line"
 
 [character]
-success_symbol = '[\$](bold dattito_line)'
-error_symbol = '[\$](bold dattito_line)'
+success_symbol = '[\$](bold surface1)'
+error_symbol = '[\$](bold surface1)'
 
 [gcloud]
 disabled = true
