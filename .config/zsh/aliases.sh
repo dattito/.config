@@ -27,6 +27,14 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+# Use corepack for node package managers
+alias yarn="corepack yarn"
+alias yarnpkg="corepack yarnpkg"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias npm="corepack npm"
+alias npx="corepack npx"
+
 function vy() {
   cd "$1" && vim +Oil
 }
