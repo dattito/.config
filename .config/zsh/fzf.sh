@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-export FZF_DEFAULT_COMMAND='fd --type file --hidden -E ".git" -E "{node_modules,target,.venv,.git,__pycache__,dist,build,.terraform}"'
+export FZF_DEFAULT_COMMAND='fd --type file --hidden -E ".git" -E "{node_modules,target,.venv,.git,__pycache__,dist,build,.terraform,.mypy_cache,.ipynb_checkpoints,.DS_Store,.ruff_cache,.idea}"'
 
 export FZF_DEFAULT_OPTS=" \
 --color=spinner:#f5e0dc,hl:#f38ba8 \
