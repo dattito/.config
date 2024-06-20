@@ -12,7 +12,7 @@ return {
     },
     {
       "<leader>fa",
-      "<cmd>Telescope Telescope find_files follow=true no_ignore=true hidden=true <cr>",
+      "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>",
       "Find all files",
     },
     {
