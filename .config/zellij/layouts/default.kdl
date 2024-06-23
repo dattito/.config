@@ -25,7 +25,7 @@ layout {
                 mode_tmux ""
 
 
-                tab_normal   "#[fg=#cdd6f4] {name} "
+                tab_normal   "#[fg=#9399b2] {name} "
                 tab_active   "#[bg=#9399b2,fg=#313244,bold] {name} "
             } 
         }

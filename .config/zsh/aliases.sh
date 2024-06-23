@@ -5,6 +5,7 @@ alias cd=z
 alias cat=bat
 alias vz="vim ~/.zshrc"
 alias vo="vim +Oil"
+alias vn="z dotfiles && v"
 alias t="tree -I node_modules -I .git -a"
 alias lc="latexmk -pdf -dvi- -shell-escape -output-directory=output"
 alias lw="watchexec -i \"output/**\" 'latexmk -pdf -dvi- -shell-escape -output-directory=output'"
