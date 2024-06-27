@@ -27,10 +27,11 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Lunar$" manage=off
 yabai -m rule --add app="^Rectangle$" manage=off
 yabai -m rule --add app="^Vivid$" manage=off
-yabai -m rule --add app="Hotspot Shield" manage=off
-yabai -m rule --add app="AlDente" manage=off
-yabai -m rule --add app="Chromium" manage=off
-yabai -m rule --add app="Google Chrome for Testing" manage=off
+yabai -m rule --add app="^Hotspot Shield$" manage=off
+yabai -m rule --add app="^AlDente$" manage=off
+yabai -m rule --add app="^Chromium$" manage=off
+yabai -m rule --add app="^Google Chrome for Testing$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
 
 yabai -m rule --add label="Firfox PIP" app="^Firefox$" title="^(Picture-in-Picture)$" manage=off
 yabai -m rule --add label="Firefox Extension" app="^Firefox$" title="^(Extension)" manage=off
