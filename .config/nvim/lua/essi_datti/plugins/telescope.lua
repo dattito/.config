@@ -1,4 +1,5 @@
-local excluded_files = "{.git,node_modules,target,dist,.venv}"
+local excluded_files =
+"{node_modules,target,.venv,.git,__pycache__,dist,build,.terraform,.mypy_cache,.ipynb_checkpoints,.DS_Store,.ruff_cache,.idea}"
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -8,37 +9,37 @@ return {
     {
       "<leader><leader>",
       "<cmd>Telescope find_files<cr>",
-      "Find files",
+      desc = "Find files",
     },
     {
       "<leader>fa",
       "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>",
-      "Find all files",
+      desc = "Find all files",
     },
     {
       "<leader>fo",
       "<cmd>Telescope oldfiles<cr>",
-      "Find old files",
+      desc = "Find old files",
     },
     {
       "<leader>fb",
       "<cmd>Telescope buffers<cr>",
-      "Find buffers",
+      desc = "Find buffers",
     },
     {
       "<leader>fw",
       "<cmd>Telescope live_grep<cr>",
-      "Live grep",
+      desc = "Live grep",
     },
     {
       "<leader>fn",
       "<cmd>Telescope find_files cwd=~/repositories/dotfiles<cr>",
-      "Find dotfiles",
+      desc = "Find dotfiles",
     },
     {
       "<leader>fz",
       "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-      "Live grep current file",
+      desc = "Live grep current file",
     },
   },
   cmd = "Telescope",
