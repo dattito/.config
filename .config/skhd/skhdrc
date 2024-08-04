@@ -19,7 +19,8 @@ ralt + shift - 1 : open -a Obsidian
 ralt - 2 : open -a Firefox
 ralt + cmd - 2 : open -a Arc
 ralt + shift - 2 : open -a Safari
-ralt - 3 : open -a Music
+ralt - 3 : open -a Spotify
+ralt + cmd - 3 : open -a Music
 ralt + shift - 3 : open -a "Microsoft Teams classic"
 ralt - 4 : open -a SchildiChat || open -a Element
 ralt + shift - 4 : open -a "Messages"
