@@ -1,33 +1,33 @@
 # WORK
-#ralt - 1 : open -a WezTerm
-#ralt + shift - 1 : open -a Slack
-#ralt - 2 : open -a "Google Chrome"
-#ralt + shift - 2 : open -a Safari
-#ralt + rcmd - 2 : open -a Firefox
-#ralt - 3 : open -a Music
-#ralt + shift - 3 : open -a "Microsoft Teams classic"
-#ralt - 4 : open -a Settings
-#ralt + shift - 4 : open -a "Messages"
-#ralt - 5 : open -a "Visual Studio Code"
-#ralt - 6 : open -a "Microsoft Outlook"
-#ralt - 7 : open -a Docker
-#lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
-
-# UNI
 ralt - 1 : open -a WezTerm
-ralt + shift - 1 : open -a Obsidian
-ralt - 2 : open -a Firefox
-ralt + cmd - 2 : open -a Arc
+ralt + shift - 1 : open -a Slack
+ralt - 2 : open -a "Google Chrome"
 ralt + shift - 2 : open -a Safari
+ralt + rcmd - 2 : open -a Firefox
 ralt - 3 : open -a Spotify
-ralt + cmd - 3 : open -a Music
 ralt + shift - 3 : open -a "Microsoft Teams classic"
 ralt - 4 : open -a SchildiChat || open -a Element
 ralt + shift - 4 : open -a "Messages"
 ralt - 5 : open -a "Visual Studio Code"
-ralt - 6 : open -a "Preview"
+ralt - 6 : open -a "Microsoft Outlook"
 ralt - 7 : open -a Docker
 lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
+
+# UNI
+# ralt - 1 : open -a WezTerm
+# ralt + shift - 1 : open -a Obsidian
+# ralt - 2 : open -a Firefox
+# ralt + cmd - 2 : open -a "Google Chrome"
+# ralt + shift - 2 : open -a Safari
+# ralt - 3 : open -a Spotify
+# ralt + cmd - 3 : open -a Music
+# ralt + shift - 3 : open -a "Microsoft Teams classic"
+# ralt - 4 : open -a SchildiChat || open -a Element
+# ralt + shift - 4 : open -a "Messages"
+# ralt - 5 : open -a "Visual Studio Code"
+# ralt - 6 : open -a "Preview"
+# ralt - 7 : open -a Docker
+# lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
 
 cmd - h : skhd -k "0x33"
 
