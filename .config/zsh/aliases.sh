@@ -6,6 +6,7 @@ alias cat=bat
 alias vz="vim ~/.zshrc"
 alias vo="vim +Oil"
 alias g="git"
+alias gs="git status"
 alias b="fbi"
 alias vn="z dotfiles && v"
 alias t="tree -I node_modules -I .git -a"
