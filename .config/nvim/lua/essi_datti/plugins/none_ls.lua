@@ -28,7 +28,9 @@ return {
 			}),
 			null_ls.builtins.formatting.sqlfluff,
 			null_ls.builtins.formatting.terraform_fmt,
+			null_ls.builtins.formatting.buf,
 			null_ls.builtins.formatting.typstfmt,
+			null_ls.builtins.diagnostics.buf,
 			null_ls.builtins.diagnostics.terraform_validate,
 		}
 
