@@ -23,3 +23,5 @@ opt.signcolumn = "yes"
 opt.undofile = true
 
 opt.updatetime = 250
+
+opt.scrolloff = 99999
