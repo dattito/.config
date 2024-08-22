@@ -47,7 +47,9 @@ return {
       html = {},
       cssls = {},
       tsserver = {},
-      clangd = {},
+      clangd = {
+        filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+      },
       texlab = {},
       eslint = {},
       marksman = {},
