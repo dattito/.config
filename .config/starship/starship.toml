@@ -96,7 +96,7 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
-dattito_line  = "#bac2de" # = subtext1
+dattito_line  = "white"
 
 # ---------- PRESET NO VERSION NUMBERS
 
