@@ -1,10 +1,24 @@
 return {
   "neovim/nvim-lspconfig",
+  after = {"hrsh7th/nvim-cmp"},
+  event = "VeryLazy",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "b0o/schemastore.nvim",
+    {
+      "lukas-reineke/lsp-format.nvim",
+      config = function()
+        require("lsp-format").setup({})
+      end,
+    },
+  },
   config = function()
     require("mason").setup()
 
+    require("lsp-format").setup({})
     local on_attach = function(client, bufnr)
-      require("lsp-format").on_attach(client, bufnr)
+      -- require("lsp-format").on_attach(client, bufnr)
     end
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -13,24 +27,6 @@ return {
       ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
       ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
     }
-
-    -- capabilities.textDocument.completion.completionItem = {
-    --   documentationFormat = { "markdown", "plaintext" },
-    --   snippetSupport = true,
-    --   preselectSupport = true,
-    --   insertReplaceSupport = true,
-    --   labelDetailsSupport = true,
-    --   deprecatedSupport = true,
-    --   commitCharactersSupport = true,
-    --   tagSupport = { valueSet = { 1 } },
-    --   resolveSupport = {
-    --     properties = {
-    --       "documentation",
-    --       "detail",
-    --       "additionalTextEdits",
-    --     },
-    --   },
-    -- }
 
     require("mason-lspconfig").setup({
       ensure_installed = nil,
@@ -46,12 +42,14 @@ return {
     local servers = {
       html = {},
       cssls = {},
-      tsserver = {},
+      ts_ls = {},
       clangd = {
-        filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+        filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
       },
       texlab = {},
-      eslint = {},
+      eslint = {
+        format = false,
+      },
       marksman = {},
       tailwindcss = {},
       pyright = {},
@@ -165,19 +163,6 @@ return {
       require("lspconfig")[name].setup(opts)
     end
   end,
-  event = "VeryLazy",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "b0o/schemastore.nvim",
-    "hrsh7th/cmp-nvim-lsp",
-    {
-      "lukas-reineke/lsp-format.nvim",
-      config = function()
-        require("lsp-format").setup({})
-      end,
-    },
-  },
   keys = {
     { "<leader>lr", "<CMD> LspRestart<CR>", "Restart LSP" },
     {

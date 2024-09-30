@@ -13,7 +13,6 @@ return {
 		"onsails/lspkind.nvim",
 	},
 	event = { "BufReadPost", "BufNewFile" },
-	-- lazy = false,
 	config = function()
 		vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#a6e3a1", fg = "Black" })
 
