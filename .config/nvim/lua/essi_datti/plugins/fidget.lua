@@ -7,7 +7,7 @@ return {
     notification = {
 
       window = {
-        max_height = 1,
+        max_height = 3,
         winblend = 0,
       },
     },
