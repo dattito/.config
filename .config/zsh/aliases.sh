@@ -16,6 +16,7 @@ alias lw="watchexec -i \"output/**\" 'latexmk -pdf -dvi- -shell-escape -output-d
 alias k=kubectl
 alias zf="zellij run -f --"
 alias zfc="zellij run -f -c --"
+alias ci="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 alias ls='eza --color=always --group-directories-first --icons'
 alias l='eza -la --icons --octal-permissions --group-directories-first'
