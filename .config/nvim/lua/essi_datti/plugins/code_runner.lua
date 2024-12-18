@@ -12,6 +12,7 @@ return {
       rust = {
         "cargo run",
       },
+      gleam = "gleam run"
     },
   },
   keys = {

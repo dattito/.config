@@ -1,8 +1,8 @@
 return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"neovim/nvim-lspconfig",
-		"hrsh7th/cmp-nvim-lsp",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-path",
@@ -36,7 +36,7 @@ return {
 		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 		cmp.setup({
-			sources = {
+			sources = cmp.config.sources({
 				-- { name = "crates" },
 				{ name = "nvim_lsp" },
 				{ name = "lazydev" },
@@ -45,7 +45,7 @@ return {
 				-- { name = "nvim_lua" },
 				{ name = "path" },
 				{ name = "omni" },
-			},
+			}),
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
