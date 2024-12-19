@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = "VeryLazy",
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -118,7 +118,7 @@ return {
 					},
 				},
 			},
-			typst_lsp = {
+			tinymist = {
 				capabilities = capabilities,
 				on_attach = on_attach,
 				handlers = handlers,

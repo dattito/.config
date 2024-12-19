@@ -1,18 +1,21 @@
 return {
-	"hrsh7th/nvim-cmp",
+	"iguanacucumber/magazine.nvim",
+	name = "nvim-cmp", -- Otherwise highlighting gets messed up
 	dependencies = {
-    "neovim/nvim-lspconfig",
-    "hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-cmdline",
-		"hrsh7th/cmp-path",
+		"neovim/nvim-lspconfig",
+
+		{ "https://codeberg.org/FelipeLema/cmp-async-path", name = "cmp-path" },
+		{ "iguanacucumber/mag-nvim-lsp", name = "cmp-nvim-lsp", opts = {} },
+		{ "iguanacucumber/mag-nvim-lua", name = "cmp-nvim-lua" },
+		{ "iguanacucumber/mag-buffer", name = "cmp-buffer" },
+		{ "iguanacucumber/mag-cmdline", name = "cmp-cmdline" },
 
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 
 		"onsails/lspkind.nvim",
 	},
-	event = { "BufReadPost", "BufNewFile" },
+	event = "InsertEnter",
 	config = function()
 		vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#a6e3a1", fg = "Black" })
 
