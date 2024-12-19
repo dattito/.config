@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPost", "BufNewFile" },
+	event = "VeryLazy",
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -157,13 +157,17 @@ return {
 			},
 		}
 
+		local lspconfig = require("lspconfig")
+
 		for name, opts in pairs(servers) do
 			opts.on_attach = on_attach
 			opts.capabilities = capabilities
 			opts.handlers = handlers
 
-			require("lspconfig")[name].setup(opts)
+			lspconfig[name].setup(opts)
 		end
+
+		vim.api.nvim_command("LspStart")
 	end,
 	keys = {
 		{ "<leader>lr", "<CMD> LspRestart<CR>", "Restart LSP" },
