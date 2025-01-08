@@ -22,7 +22,7 @@ end
 return {
   tab_bar_at_bottom = true,
   hide_tab_bar_if_only_one_tab = true,
-  window_decorations = "NONE",
+  window_decorations = "RESIZE",
   audible_bell = "Disabled",
 
   window_background_opacity = 0.93,
