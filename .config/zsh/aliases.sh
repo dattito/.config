@@ -19,7 +19,9 @@ alias zfc="zellij run -f -c --"
 alias ci="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 alias ls='eza --color=always --group-directories-first --icons'
+alias lss='eza --color=always --group-directories-first --icons --total-size'
 alias l='eza -la --icons --octal-permissions --group-directories-first'
+alias lls='eza -la --icons --octal-permissions --group-directories-first --total-size'
 alias llm='eza -lbGd --header --git --sort=modified --color=always --group-directories-first --icons' 
 alias la='eza --long --all --group --group-directories-first'
 alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --color=always --group-directories-first --icons'
