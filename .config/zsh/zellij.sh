@@ -3,6 +3,7 @@
 if [[ -x "$(command -v zellij)" ]]; then
 
   export ZELLIJ_AUTO_ATTACH="true"
+  eval "$(zellij setup --generate-auto-start zsh)"
   # export ZELLIJ_AUTO_EXIT="true"
 
   function zr () { zellij run --name "$*" -- zsh -ic "$*";}
@@ -11,7 +12,6 @@ if [[ -x "$(command -v zellij)" ]]; then
   function zef () { zellij edit --floating "$*";}
 
   if [ "$NO_MULTIPLEXER" != "1" ]; then
-    # ZSH_TMUX_AUTOSTART=true
     eval "$(zellij setup --generate-auto-start zsh)"
   fi
 fi

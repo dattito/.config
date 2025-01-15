@@ -1,11 +1,11 @@
 local wezterm = require("wezterm")
 
 function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then
-    return 'Catppuccin Mocha'
-  else
-    return 'Catppuccin Latte'
-  end
+	if appearance:find("Dark") then
+		return "Catppuccin Mocha"
+	else
+		return "Catppuccin Latte"
+	end
 end
 
 -- -- Change theme depending on dark- or light-mode
@@ -20,31 +20,38 @@ end
 -- end)
 
 return {
-  tab_bar_at_bottom = true,
-  hide_tab_bar_if_only_one_tab = true,
-  window_decorations = "RESIZE",
-  audible_bell = "Disabled",
+	tab_bar_at_bottom = true,
+	hide_tab_bar_if_only_one_tab = true,
+	window_decorations = "RESIZE",
+	audible_bell = "Disabled",
 
-  window_background_opacity = 0.93,
-  macos_window_background_blur = 32,
+	window_background_opacity = 0.93,
+	macos_window_background_blur = 32,
 
-  font = wezterm.font("FiraCode Nerd Font"),
-  font_size = 14.0,
+	window_padding = {
+    top = 5,
+    right = 5,
+    left = 5,
+		bottom = 5,
+	},
 
-  max_fps = 120,
+	font = wezterm.font("FiraCode Nerd Font"),
+	font_size = 14.0,
 
-  color_scheme = "catppuccin-mocha",
+	max_fps = 120,
 
-  use_dead_keys = false,
-  send_composed_key_when_left_alt_is_pressed = true,
-  use_ime = true,
+	color_scheme = "catppuccin-mocha",
 
-  window_close_confirmation = "NeverPrompt",
-  keys = {
-    {
-      key = "n",
-      mods = "OPT",
-      action = wezterm.action({ SendString = "~" }),
-    },
-  },
+	use_dead_keys = false,
+	send_composed_key_when_left_alt_is_pressed = true,
+	use_ime = true,
+
+	window_close_confirmation = "NeverPrompt",
+	keys = {
+		{
+			key = "n",
+			mods = "OPT",
+			action = wezterm.action({ SendString = "~" }),
+		},
+	},
 }
