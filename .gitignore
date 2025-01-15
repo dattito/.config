@@ -30,3 +30,4 @@ gcloud
 lazysql
 jgit
 zed
+.config/zed/settings.json
