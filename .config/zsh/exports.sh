@@ -10,7 +10,7 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
 export COREPACK_HOME="$HOME/.cache/node/corepack"
 
-echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 function export_env_vars() {
     # Allow optional path to .env file, default to .env in current directory
