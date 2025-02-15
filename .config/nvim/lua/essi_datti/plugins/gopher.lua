@@ -14,6 +14,7 @@ return {
   end,
   ---@type gopher.Config
   opts = {},
+  cmd = {"GoInstallDeps"},
   keys = {
     { "<leader>ge", "<cmd>GoIfErr<cr>", desc = "Run ifErr (for Go)" }
   }
