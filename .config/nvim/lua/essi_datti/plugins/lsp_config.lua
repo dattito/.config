@@ -38,137 +38,123 @@ return {
 
     local util = require("lspconfig/util")
 
-    local servers = {
-      html = {},
-      cssls = {},
-      ts_ls = {},
-      emmet_language_server = {},
-      clangd = {
-        filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
-      },
-      texlab = {},
-      eslint = {
-        format = false,
-      },
-      marksman = {},
-      tailwindcss = {},
-      pyright = {
-        settings = {
-          pyright = {
-            -- Using Ruff's import organizer
-            disableOrganizeImports = true,
-          },
-          python = {
-            analysis = {
-              -- Ignore all files for analysis to exclusively use Ruff for linting
-              ignore = { "*" },
-            },
-          },
-        },
-      },
-      ruff = {},
-      prismals = {},
-      sqlls = {},
-      terraformls = {},
-      gleam = {},
-      lua_ls = {
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-            workspace = {
-              library = {
-                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                [vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types"] = true,
-                [vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
-              },
-              maxPreload = 100000,
-              preloadFileSize = 10000,
-            },
-          },
-        },
-      },
-      gopls = {
-        capabilities = capabilities,
-        handlers = handlers,
-        on_attach = on_attach,
-        cmd = { "gopls" },
-        filetypes = { "go", "gomod", "gowork", "gotmpl" },
-        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-        settings = {
-          gopls = {
-            gofumpt = true,
-            completeUnimported = true,
-            analyses = {
-              unusedparams = true,
-            },
-          },
-        },
-      },
-      rust_analyzer = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-        filetypes = { "rust" },
-        root_dir = util.root_pattern(".git"),
-        settings = {
-          ["rust-analyzer"] = {
-            check = {
-              features = "all",
-              command = "clippy",
-            },
-            diagnostics = {
-              refreshSupport = false,
-              experimental = {
-                enable = true,
-              },
-            },
-            cachePriming = {
-              enable = false,
-            },
-          },
-        },
-      },
-      tinymist = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-        settings = {
-          exportPdf = "onType", -- Choose onType, onSave or never.
-          -- serverPath = "" -- Normally, there is no need to uncomment it.
-        },
-      },
-      jsonls = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-        settings = {
-          json = {
-            schemas = require("schemastore").json.schemas(),
-            validate = { enable = true },
-          },
-        },
-      },
-      yamlls = {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        handlers = handlers,
-        settings = {
-          yaml = {
-            schemaStore = {
-              -- You must disable built-in schemaStore support if you want to use
-              -- this plugin and its advanced options like `ignore`.
-              enable = false,
-              -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
-              url = "",
-            },
-            schemas = require("schemastore").yaml.schemas(),
-          },
-        },
-      },
-    }
+		local servers = {
+			html = {},
+			cssls = {},
+			ts_ls = {},
+			emmet_language_server = {},
+			clangd = {
+				filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+			},
+			texlab = {},
+			eslint = {
+				format = false,
+			},
+			marksman = {},
+			tailwindcss = {},
+			pyright = {},
+			ruff = {},
+			prismals = {},
+			sqlls = {},
+			terraformls = {},
+			gleam = {},
+			lua_ls = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
+						},
+						workspace = {
+							library = {
+								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+								[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+								[vim.fn.stdpath("data") .. "/lazy/ui/nvchad_types"] = true,
+								[vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy"] = true,
+							},
+							maxPreload = 100000,
+							preloadFileSize = 10000,
+						},
+					},
+				},
+			},
+			gopls = {
+				capabilities = capabilities,
+				handlers = handlers,
+				on_attach = on_attach,
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+				settings = {
+					gopls = {
+						gofumpt = true,
+						analyses = {
+							unusedparams = true,
+						},
+					},
+				},
+			},
+			rust_analyzer = {
+				capabilities = capabilities,
+				on_attach = on_attach,
+				handlers = handlers,
+				filetypes = { "rust" },
+				root_dir = util.root_pattern(".git"),
+				settings = {
+					["rust-analyzer"] = {
+						check = {
+							features = "all",
+							command = "clippy",
+						},
+						diagnostics = {
+							refreshSupport = false,
+							experimental = {
+								enable = true,
+							},
+						},
+						cachePriming = {
+							enable = false,
+						},
+					},
+				},
+			},
+			tinymist = {
+				capabilities = capabilities,
+				on_attach = on_attach,
+				handlers = handlers,
+				settings = {
+					exportPdf = "onType", -- Choose onType, onSave or never.
+					-- serverPath = "" -- Normally, there is no need to uncomment it.
+				},
+			},
+			jsonls = {
+				capabilities = capabilities,
+				on_attach = on_attach,
+				handlers = handlers,
+				settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = { enable = true },
+					},
+				},
+			},
+			yamlls = {
+				capabilities = capabilities,
+				on_attach = on_attach,
+				handlers = handlers,
+				settings = {
+					yaml = {
+						schemaStore = {
+							-- You must disable built-in schemaStore support if you want to use
+							-- this plugin and its advanced options like `ignore`.
+							enable = false,
+							-- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+							url = "",
+						},
+						schemas = require("schemastore").yaml.schemas(),
+					},
+				},
+			},
+		}
 
     local lspconfig = require("lspconfig")
 

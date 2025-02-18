@@ -65,3 +65,7 @@ function cv() {
 function bu() {
   zrf brew upgrade
 }
+
+function take() {
+    mkdir -p "$argv[1]" && cd "$argv[1]"
+}
