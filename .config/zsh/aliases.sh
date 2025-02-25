@@ -43,6 +43,9 @@ alias pnpx="corepack pnpx"
 alias npm="corepack npm"
 alias npx="corepack npx"
 
+# find and replace in all files
+alias sda="fd --type file --exec sd"
+
 function vy() {
   cd "$1" && vim +Oil
 }
