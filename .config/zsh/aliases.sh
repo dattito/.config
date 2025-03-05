@@ -13,7 +13,6 @@ alias vn="z dotfiles && v"
 alias t="tree -I node_modules -I .git -a"
 alias lc="latexmk -pdf -dvi- -shell-escape -output-directory=output"
 alias lw="watchexec -i \"output/**\" 'latexmk -pdf -dvi- -shell-escape -output-directory=output'"
-alias k=kubectl
 alias zf="zellij run -f --"
 alias zfc="zellij run -f -c --"
 alias ci="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs"
@@ -34,6 +33,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
+
+alias k=kubectl
+alias ka="kubectl apply"
+alias kaf="kubectl apply -f"
+alias kd="kubectl delete"
+alias kdf="kubectl delete -f"
 
 # Use corepack for node package managers
 alias yarn="corepack yarn"
