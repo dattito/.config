@@ -14,6 +14,8 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 export FPATH="$HOME/.docker/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 
+export XDG_CONFIG_HOME=$HOME/.config
+
 function export_env_vars() {
     # Allow optional path to .env file, default to .env in current directory
     local env_file="${1:-.env}"
