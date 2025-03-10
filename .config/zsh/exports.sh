@@ -12,6 +12,8 @@ export COREPACK_HOME="$HOME/.cache/node/corepack"
 
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
+export FPATH="$HOME/.docker/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
+
 function export_env_vars() {
     # Allow optional path to .env file, default to .env in current directory
     local env_file="${1:-.env}"
