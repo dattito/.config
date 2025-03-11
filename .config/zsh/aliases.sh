@@ -51,6 +51,9 @@ alias npx="corepack npx"
 # find and replace in all files
 alias sda="fd --type file --exec sd"
 
+# Generate duck.com e-mail and store in the clipboard
+alias new-duck-email="duck-gen|pbcopy"
+
 function vy() {
   cd "$1" && vim +Oil
 }
