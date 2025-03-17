@@ -25,3 +25,12 @@ opt.undofile = true
 opt.updatetime = 250
 
 opt.scrolloff = 10
+
+vim.diagnostic.config({
+	underline = true,
+	virtual_text = false,
+	virtual_lines = true,
+	float = {
+		border = "rounded",
+	},
+})

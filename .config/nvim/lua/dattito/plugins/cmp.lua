@@ -17,25 +17,21 @@ return {
 	},
 	event = "InsertEnter",
 	config = function()
-		vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#a6e3a1", fg = "Black" })
-
 		local cmp = require("cmp")
 
-		local function border(hl_name)
-			return {
-				{ "╭", hl_name },
-				{ "─", hl_name },
-				{ "╮", hl_name },
-				{ "│", hl_name },
-				{ "╯", hl_name },
-				{ "─", hl_name },
-				{ "╰", hl_name },
-				{ "│", hl_name },
-			}
-		end
+		local border = {
+			"╭",
+			"─",
+			"╮",
+			"│",
+			"╯",
+			"─",
+			"╰",
+			"│",
+		}
 
 		-- https://github.com/windwp/nvim-autopairs?tab=readme-ov-file#you-need-to-add-mapping-cr-on-nvim-cmp-setupcheck-readmemd-on-nvim-cmp-repo
-  --   local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+		--   local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 		cmp.setup({
@@ -57,14 +53,14 @@ return {
 			window = {
 				completion = {
 					-- border = "rounded",
-					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None,CursorLine:MyCursorLine",
+					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None,CursorLine:PmenuSel",
 					col_offset = -3,
 					side_padding = 0,
-					border = border("CmpBorder"),
+					border = border,
 				},
 
 				documentation = {
-					border = border("CmpBorder"),
+					border = border,
 					winhighlight = "Normal:CmpDoc",
 				},
 			},
