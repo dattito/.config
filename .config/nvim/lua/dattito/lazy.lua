@@ -13,7 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("essi_datti.plugins", {
+require("lazy").setup("dattito.plugins", {
 	defaults = {
 		lazy = true,
 	},
