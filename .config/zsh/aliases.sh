@@ -60,7 +60,7 @@ function vy() {
 }
 
 function v() {
-   file=$(fzf --preview='bat --color=always --style=numbers {}' --height 50% --reverse --minimal); [ -f "$file" ] && vim $file || true
+   file=$(fzf --preview='bat --color=always --style=numbers {}' --height 50% --reverse --style minimal); [ -f "$file" ] && vim $file || true
 }
 
 function load_nvm() {
