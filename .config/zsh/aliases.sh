@@ -60,7 +60,7 @@ function vy() {
 }
 
 function v() {
-   file=$(fzf --preview='bat --color=always --style=numbers {}'); [ -f "$file" ] && vim $file || true
+   file=$(fzf --preview='bat --color=always --style=numbers {}' --height 50% --reverse --minimal); [ -f "$file" ] && vim $file || true
 }
 
 function load_nvm() {
@@ -80,4 +80,13 @@ function bu() {
 
 function take() {
     mkdir -p "$argv[1]" && cd "$argv[1]"
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }

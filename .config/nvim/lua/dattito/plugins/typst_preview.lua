@@ -28,6 +28,11 @@ return {
       "<cmd>TypstPreviewToggle<cr>",
       desc = "Typst Preview Toggle",
     },
+    {
+      "<leader>ts",
+      "<cmd>TypstPreviewSyncCursor<cr>",
+      desc = "Typst Preview Sync Cursor",
+    },
   },
   cmd = "TypstPreviewToggle",
 }
