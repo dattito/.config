@@ -28,8 +28,8 @@ opt.scrolloff = 10
 
 vim.diagnostic.config({
 	underline = true,
-	virtual_text = false,
-	virtual_lines = true,
+	virtual_text = true,
+	virtual_lines = false,
 	float = {
 		border = "rounded",
 	},
