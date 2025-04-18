@@ -5,3 +5,4 @@
 .zshrc.example
 Justfile
 README.md
+.DS_Store
