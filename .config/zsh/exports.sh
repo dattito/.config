@@ -10,7 +10,7 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
 export COREPACK_HOME="$HOME/.cache/node/corepack"
 
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$HOME/.bun/bin:$PATH"
 
 export FPATH="$HOME/.docker/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 
