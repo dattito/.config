@@ -38,7 +38,7 @@ return {
 	font = wezterm.font("FiraCode Nerd Font"),
 	font_size = 14.0,
 
-	max_fps = 120,
+	max_fps = 80,
 
 	color_scheme = "catppuccin-mocha",
 
