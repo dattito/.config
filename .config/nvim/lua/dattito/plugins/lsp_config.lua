@@ -39,6 +39,9 @@ return {
     local util = require("lspconfig/util")
 
 		local servers = {
+      dartls = {
+        cmd = { "dart", 'language-server', '--protocol=lsp' }
+      },
 			html = {},
 			cssls = {},
 			ts_ls = {},

@@ -2,10 +2,7 @@
 # sudo yabai --load-sa
 
 # default layout (can be bsp, stack or float)
-# yabai -m config layout stack
-yabai -m config layout float
-
-yabai -m config focus_follows_mouse autofocus
+yabai -m config layout stack
 
 # -- mouse settings --
 

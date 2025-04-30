@@ -1,8 +1,8 @@
 ralt - 1 : open -a WezTerm
 ralt + shift - 1 : open -a Anki
-ralt - 2 : open -a "Microsoft Edge Dev" 
+ralt - 2 : open -a Firefox
 ralt + shift - 2 : open -a Preview
-ralt + rcmd - 2 : open -a Firefox
+ralt + cmd - 2 : open -a "Microsoft Edge Dev" 
 ralt - 3 : open -a Spotify
 ralt + shift - 3 : open -a "Microsoft Teams"
 ralt - 4 : open -a SchildiChat || open -a Element
@@ -20,6 +20,9 @@ cmd - h : skhd -k "0x33"
 # lalt - o : skhd -k "0x7C"
 
 ralt - f : skhd -k "ctrl + fn - f"
+# for these two commands first change keyboard shortcuts of Windows.Halves in the System Settings
+ralt - w : skhd -k "ctrl + cmd + lalt - 0x7B"
+ralt - e : skhd -k "ctrl + cmd + lalt - 0x7C"
 
 lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
 lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove
@@ -29,8 +32,11 @@ lalt - o: osascript -e 'tell app "System Events" to tell appearance preferences 
 ralt - s : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 ralt - d : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
-# ralt - a : yabai -m window --display prev || yabai -m window --display last; yabai -m display --focus prev || yabai -m display --focus last
+ralt - a : yabai -m window --display prev || yabai -m window --display last; yabai -m display --focus prev || yabai -m display --focus last
 # ralt - f : yabai -m window --display next || yabai -m window --display first; yabai -m display --focus next || yabai -m display --focus first
+
+ralt - d : yabai -m config layout stack
+ralt + rcmd - d : yabai -m config layout float
 
 # stop/start/restart yabai
 ctrl + alt - q : yabai --stop-service
