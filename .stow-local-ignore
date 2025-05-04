@@ -1,5 +1,3 @@
-# .stow-local-ignore
-
 .gitignore
 .git
 .zshrc.example
