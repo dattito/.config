@@ -1,8 +1,9 @@
 Aloxaf/fzf-tab
-zsh-users/zsh-syntax-highlighting
+# zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 jeffreytse/zsh-vi-mode
 thirteen37/fzf-brew
 getantidote/use-omz
 ohmyzsh/ohmyzsh path:plugins/dotenv
+zdharma-continuum/fast-syntax-highlighting kind:defer
