@@ -36,4 +36,4 @@ yabai -m rule --add app="^Screen Sharing$" manage=off
 
 yabai -m rule --add label="Firfox PIP" app="^Firefox$" title="^(Picture-in-Picture)$" manage=off
 yabai -m rule --add label="Firefox Extension" app="^Firefox$" title="^(Extension)" manage=off
-yabai -m rule --add label="Pliim" app="^Firefox$" manage=off
+yabai -m rule --add label="Pliim" manage=off

@@ -5,7 +5,7 @@ ralt + shift - 2 : open -a Preview
 ralt + cmd - 2 : open -a "Microsoft Edge Dev" 
 ralt - 3 : open -a Spotify
 ralt + shift - 3 : open -a "Microsoft Teams"
-ralt - 4 : open -a SchildiChat || open -a Element
+ralt - 4 : open -a Element
 ralt + shift - 4 : open -a "Messages"
 ralt - 5 : open -a "Visual Studio Code"
 ralt - 6 : open -a "Microsoft Outlook"
