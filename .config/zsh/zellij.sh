@@ -11,8 +11,6 @@ if [[ -x "$(command -v zellij)" ]]; then
   function zef () { zellij edit --floating "$*";}
 
   if [ "$NO_MULTIPLEXER" != "1" ]; then
-    if status is-interactive
-        eval (zellij setup --generate-auto-start fish | string collect)
-    end
+    eval "$(zellij setup --generate-auto-start zsh)"
   fi
 fi
