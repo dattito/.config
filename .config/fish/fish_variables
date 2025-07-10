@@ -1,8 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR HOMEBREW_KEG_ONLY_APPS:ruby\x1ecurl\x1esqlite
 SETUVAR __fish_initialized:3800
+SETUVAR _fisher_brewingweasel_2F_fishbang_files:\x7e/\x2econfig/fish/conf\x2ed/fishbang\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/autopair\x2efish
+SETUVAR _fisher_mattmc3_2F_magic_2D_enter_2E_fish_files:\x7e/\x2econfig/fish/conf\x2ed/magic\x2denter\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/autopair\x2efish\x1ebrewingweasel/fishbang\x1emattmc3/magic\x2denter\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -32,4 +35,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/opt/uutils\x2dcoreutils/libexec/uubin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/opt/homebrew/opt/sqlite/bin\x1e/opt/homebrew/opt/ruby/bin\x1e/opt/homebrew/opt/uutils\x2dcoreutils/libexec/uubin\x1e/opt/homebrew/bin
