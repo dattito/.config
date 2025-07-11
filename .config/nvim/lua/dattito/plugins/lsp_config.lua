@@ -1,47 +1,51 @@
 return {
-  "neovim/nvim-lspconfig",
-  event = "VeryLazy",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "b0o/schemastore.nvim",
-    {
-      "lukas-reineke/lsp-format.nvim",
-      config = function()
-        require("lsp-format").setup({})
-      end,
-    },
-  },
-  config = function()
-    require("mason").setup()
+	"neovim/nvim-lspconfig",
+	tag = "v1.8.0",
+	event = "VeryLazy",
+	dependencies = {
+		{
+			"mason-org/mason.nvim",
+			tag = "v1.11.0",
+		},
+		{ "mason-org/mason-lspconfig.nvim", tag = "v1.32.0" },
+		"b0o/schemastore.nvim",
+		{
+			"lukas-reineke/lsp-format.nvim",
+			config = function()
+				require("lsp-format").setup({})
+			end,
+		},
+	},
+	config = function()
+		require("mason").setup()
 
-    require("lsp-format").setup({})
-    local on_attach = function(client, bufnr)
-      -- require("lsp-format").on_attach(client, bufnr)
-    end
+		require("lsp-format").setup({})
+		local on_attach = function(client, bufnr)
+			-- require("lsp-format").on_attach(client, bufnr)
+		end
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    local handlers = {
-      ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-      ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-    }
+		local handlers = {
+			["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
+			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
+		}
 
-    require("mason-lspconfig").setup({
-      ensure_installed = nil,
-      automatic_installation = {
-        exclude = {
-          "rust_analyzer",
-        },
-      },
-    })
+		require("mason-lspconfig").setup({
+			ensure_installed = nil,
+			automatic_installation = {
+				exclude = {
+					"rust_analyzer",
+				},
+			},
+		})
 
-    local util = require("lspconfig/util")
+		local util = require("lspconfig/util")
 
 		local servers = {
-      dartls = {
-        cmd = { "dart", 'language-server', '--protocol=lsp' }
-      },
+			dartls = {
+				cmd = { "dart", "language-server", "--protocol=lsp" },
+			},
 			html = {},
 			cssls = {},
 			ts_ls = {},
@@ -159,90 +163,90 @@ return {
 			},
 		}
 
-    local lspconfig = require("lspconfig")
+		local lspconfig = require("lspconfig")
 
-    for name, opts in pairs(servers) do
-      opts.on_attach = on_attach
-      opts.capabilities = capabilities
-      opts.handlers = handlers
+		for name, opts in pairs(servers) do
+			opts.on_attach = on_attach
+			opts.capabilities = capabilities
+			opts.handlers = handlers
 
-      lspconfig[name].setup(opts)
-    end
+			lspconfig[name].setup(opts)
+		end
 
-    vim.api.nvim_command("LspStart")
-  end,
-  keys = {
-    { "<leader>lr", "<CMD> LspRestart<CR>", "Restart LSP" },
-    {
-      "<leader>q",
-      function()
-        vim.diagnostic.setloclist()
-      end,
-      "Diagnostic setloclist",
-    },
-    {
-      "gd",
-      function()
-        vim.lsp.buf.definition()
-      end,
-      "LSP definition",
-    },
-    {
-      "gi",
-      function()
-        vim.lsp.buf.implementation()
-      end,
-      "LSP implementation",
-    },
-    {
-      "gr",
-      function()
-        vim.lsp.buf.references()
-      end,
-      "LSP references",
-    },
-    {
-      "<leader>ca",
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      "LSP code action",
-    },
-    {
-      "gD",
-      function()
-        vim.lsp.buf.declaration()
-      end,
-      "LSP declaration",
-    },
-    {
-      "<leader>lf",
-      function()
-        vim.diagnostic.open_float({ border = "rounded" })
-      end,
-      "Floating diagnostic",
-    },
-    {
-      "<leader>ra",
-      function()
-        vim.lsp.buf.rename()
-      end,
-      "Rename variable",
-    },
-    {
-      "[d",
-      function()
-        vim.diagnostic.goto_prev({ float = { border = "rounded" } })
-      end,
-      "Goto prev",
-    },
+		vim.api.nvim_command("LspStart")
+	end,
+	keys = {
+		{ "<leader>lr", "<CMD> LspRestart<CR>", "Restart LSP" },
+		{
+			"<leader>q",
+			function()
+				vim.diagnostic.setloclist()
+			end,
+			"Diagnostic setloclist",
+		},
+		{
+			"gd",
+			function()
+				vim.lsp.buf.definition()
+			end,
+			"LSP definition",
+		},
+		{
+			"gi",
+			function()
+				vim.lsp.buf.implementation()
+			end,
+			"LSP implementation",
+		},
+		{
+			"gr",
+			function()
+				vim.lsp.buf.references()
+			end,
+			"LSP references",
+		},
+		{
+			"<leader>ca",
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			"LSP code action",
+		},
+		{
+			"gD",
+			function()
+				vim.lsp.buf.declaration()
+			end,
+			"LSP declaration",
+		},
+		{
+			"<leader>lf",
+			function()
+				vim.diagnostic.open_float({ border = "rounded" })
+			end,
+			"Floating diagnostic",
+		},
+		{
+			"<leader>ra",
+			function()
+				vim.lsp.buf.rename()
+			end,
+			"Rename variable",
+		},
+		{
+			"[d",
+			function()
+				vim.diagnostic.goto_prev({ float = { border = "rounded" } })
+			end,
+			"Goto prev",
+		},
 
-    {
-      "]d",
-      function()
-        vim.diagnostic.goto_next({ float = { border = "rounded" } })
-      end,
-      "Goto next",
-    },
-  },
+		{
+			"]d",
+			function()
+				vim.diagnostic.goto_next({ float = { border = "rounded" } })
+			end,
+			"Goto next",
+		},
+	},
 }
