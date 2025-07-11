@@ -1,6 +1,4 @@
-if type -q zellij
-  set -x ZELLIJ_AUTO_ATTACH "true"
-  # set -x ZELLIJ_AUTO_EXIT "true"
+if type -q zellij; and status is-interactive
 
   function zr
     zellij run --name "$argv" -- zsh -ic "$argv"
@@ -19,16 +17,8 @@ if type -q zellij
   end
 
   if test "$NO_MULTIPLEXER" != "1"
-    if not set -q ZELLIJ
-                if test "$ZELLIJ_AUTO_ATTACH" = "true"
-                    zellij attach -c
-                else
-                    zellij
-                end
-
-                if test "$ZELLIJ_AUTO_EXIT" = "true"
-                    kill $fish_pid
-                end
-            end
-      end
+    set -x ZELLIJ_AUTO_ATTACH "true"
+    set -x ZELLIJ_AUTO_EXIT "true"
+    eval (zellij setup --generate-auto-start fish | string collect)
+  end
 end
