@@ -6,6 +6,7 @@ command_timeout = 50
 format = """
 $directory\
 $fill\
+$kubernetes\
 $line_break\
 $os\
 $container\
@@ -256,3 +257,8 @@ symbol = 'Zig '
 format = 'via [$symbol]($style)'
 symbol = 'Gleam   '
 
+[kubernetes]
+disabled = false
+format = "[$symbol $context( \\($namespace\\))]($style) "
+style = "bold white"
+symbol = "K8s"
