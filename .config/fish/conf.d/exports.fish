@@ -3,3 +3,4 @@ function espsetup
 end
 
 set -gx EDITOR nvim
+set -gx K9S_CONFIG_DIR ~/.config/k9s
