@@ -70,9 +70,9 @@ end
 function __fish_brew_needs_formula_to_install
     set -l cmd (commandline -opc)
     # Ensure at least 'brew install' is typed
-    if [ (count $cmd) -lt 2 ]; return 1; end
+    if count $cmd -lt 2; return 1; end # FIX: Removed [ ] for numeric comparison
     # Check for 'brew install' and that '--cask' is NOT present
-    if [ $cmd[1] = "brew" ] and [ $cmd[2] = "install" ] and not contains -- "--cask" $cmd
+    if $cmd[1] = "brew" and $cmd[2] = "install" and not contains -- "--cask" $cmd # FIX: Removed [ ] for string comparisons
         return 0
     end
     return 1
@@ -81,8 +81,8 @@ end
 # Condition: true if the command is `brew uninstall` but NOT `brew uninstall --cask`
 function __fish_brew_needs_formula_to_uninstall
     set -l cmd (commandline -opc)
-    if [ (count $cmd) -lt 2 ]; return 1; end
-    if [ $cmd[1] = "brew" ] and [ $cmd[2] = "uninstall" ] and not contains -- "--cask" $cmd
+    if count $cmd -lt 2; return 1; end # FIX: Removed [ ]
+    if $cmd[1] = "brew" and $cmd[2] = "uninstall" and not contains -- "--cask" $cmd # FIX: Removed [ ]
         return 0
     end
     return 1
@@ -91,8 +91,8 @@ end
 # Condition: true if the command is `brew install --cask`
 function __fish_brew_needs_cask_to_install
     set -l cmd (commandline -opc)
-    if [ (count $cmd) -lt 2 ]; return 1; end
-    if [ $cmd[1] = "brew" ] and [ $cmd[2] = "install" ] and contains -- "--cask" $cmd
+    if count $cmd -lt 2; return 1; end # FIX: Removed [ ]
+    if $cmd[1] = "brew" and $cmd[2] = "install" and contains -- "--cask" $cmd # FIX: Removed [ ]
         return 0
     end
     return 1
@@ -101,13 +101,12 @@ end
 # Condition: true if the command is `brew uninstall --cask`
 function __fish_brew_needs_cask_to_uninstall
     set -l cmd (commandline -opc)
-    if [ (count $cmd) -lt 2 ]; return 1; end
-    if [ $cmd[1] = "brew" ] and [ $cmd[2] = "uninstall" ] and contains -- "--cask" $cmd
+    if count $cmd -lt 2; return 1; end # FIX: Removed [ ]
+    if $cmd[1] = "brew" and $cmd[2] = "uninstall" and contains -- "--cask" $cmd # FIX: Removed [ ]
         return 0
     end
     return 1
 end
-
 # --- Register Completions ---
 # These will trigger fzf on Tab if the conditions above are met.
 
