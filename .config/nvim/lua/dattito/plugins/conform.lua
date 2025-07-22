@@ -5,8 +5,7 @@ return {
     {
       "<leader>fm",
       function()
-        vim.lsp.buf.format({ async = true })
-        require("conform").format({ async = true })
+        require("conform").format()
       end,
       desc = "LSP formatting",
     },
