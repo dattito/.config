@@ -13,6 +13,7 @@ opt.clipboard:append("unnamedplus")
 
 vim.g.mapleader = " "
 
+
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
@@ -25,6 +26,8 @@ opt.undofile = true
 opt.updatetime = 250
 
 opt.scrolloff = 10
+
+opt.winborder = 'rounded'
 
 vim.diagnostic.config({
 	underline = true,
