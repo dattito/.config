@@ -43,8 +43,11 @@ ctrl + alt - q : yabai --stop-service
 ctrl + alt - s : yabai --start-service
 ctrl + alt - r : yabai --restart-service
 
+ctrl + lalt - d : pmset displaysleepnow
+
 # Mute mic
 ralt + shift - m : SwitchAudioSource -t input -m toggle | terminal-notifier
 
 # Cycle through output devices
 ralt + shift - n : SwitchAudioSource -n | terminal-notifier
+
