@@ -4,3 +4,5 @@ end
 
 set -gx EDITOR nvim
 set -gx K9S_CONFIG_DIR ~/.config/k9s
+
+set -gx BAT_THEME "Catppuccin Mocha"
