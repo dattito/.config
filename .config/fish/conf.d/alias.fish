@@ -22,7 +22,7 @@ alias ..... "cd ../../../.."
 
 alias ls "eza --color=always --group-directories-first --icons"
 alias lss "eza --color=always --group-directories-first --icons --total-size"
-alias l "eza -la --icons --octal-permissions --group-directories-first"
+alias l "eza -la --icons --group-directories-first --git"
 alias lls "eza -la --icons --octal-permissions --group-directories-first --total-size"
 alias llm "eza -lbGd --header --git --sort=modified --color=always --group-directories-first --icons"
 alias la "eza --long --all --group --group-directories-first"
