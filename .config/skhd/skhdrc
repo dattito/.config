@@ -27,7 +27,7 @@ ralt - e : skhd -k "ctrl + cmd + lalt - 0x7C"
 lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
 lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove
 
-lalt - o: osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+alt - o: osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
 ralt - s : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 ralt - d : yabai -m window --focus stack.next || yabai -m window --focus stack.first
@@ -43,7 +43,7 @@ ctrl + alt - q : yabai --stop-service
 ctrl + alt - s : yabai --start-service
 ctrl + alt - r : yabai --restart-service
 
-ctrl + lalt - d : pmset displaysleepnow
+ctrl + alt - d : pmset displaysleepnow
 
 # Mute mic
 ralt + shift - m : SwitchAudioSource -t input -m toggle | terminal-notifier
