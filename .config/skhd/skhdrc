@@ -1,5 +1,5 @@
 ralt - 1 : open -a WezTerm
-ralt + shift - 1 : open -a Anki
+ralt + shift - 1 : open -a "Visual Studio Code"
 ralt - 2 : open -a Firefox
 ralt + shift - 2 : open -a Preview
 ralt + cmd - 2 : open -a "Microsoft Edge Dev" 
