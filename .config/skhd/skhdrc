@@ -1,6 +1,6 @@
 ralt - 1 : open -a WezTerm
 ralt + shift - 1 : open -a "Visual Studio Code"
-ralt - 2 : open -a Firefox
+ralt - 2 : open -a Zen
 ralt + shift - 2 : open -a Preview
 ralt + cmd - 2 : open -a "Microsoft Edge Dev" 
 ralt - 3 : open -a Spotify
