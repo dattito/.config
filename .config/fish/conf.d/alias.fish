@@ -55,7 +55,7 @@ function vy
 end
 
 function v
-  set file (sk --preview='bat --color=always --style=numbers {}' --height 50% --reverse)
+  set file (fzf --preview='bat --color=always --style=numbers {}' --height 50% --reverse)
   test -f "$file"; and vim "$file"; or true
 end
 

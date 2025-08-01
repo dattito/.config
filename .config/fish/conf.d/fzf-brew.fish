@@ -4,13 +4,13 @@ if not command -q brew
     return
 end
 
-if not command -q sk
-    echo "sk command not found: please install via 'brew install sk'"
+if not command -q fzf
+    echo "fzf command not found: please install via 'brew install fzf'"
     return
 end
 
 
-# --- sk Configuration Variables ---
+# --- FZF Configuration Variables ---
 set -g FB_FORMULA_PREVIEW 'HOMEBREW_COLOR=true brew info {}'
 set -g FB_FORMULA_BIND "ctrl-space:execute-silent(brew home {})"
 set -g FB_CASK_PREVIEW 'HOMEBREW_COLOR=true brew info --cask {}'
@@ -21,7 +21,7 @@ set -g FB_CASK_BIND "ctrl-space:execute-silent(brew home --cask {})"
 
 # Fuzzy Brew Install (formulae)
 function fbi --description "Fuzzy find and install brew formulae"
-    set -l inst (brew formulae | sk --query=$argv[1] -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)
+    set -l inst (brew formulae | fzf --query=$argv[1] -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)
 
     if test -n "$inst"
         for prog in $inst
@@ -32,7 +32,7 @@ end
 
 # Fuzzy Brew Uninstall (formulae)
 function fbui --description "Fuzzy find and uninstall brew formulae"
-    set -l uninst (brew leaves | sk --query=$argv[1] -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)
+    set -l uninst (brew leaves | fzf --query=$argv[1] -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)
 
     if test -n "$uninst"
         for prog in $uninst
@@ -43,7 +43,7 @@ end
 
 # Fuzzy Cask Install
 function fci --description "Fuzzy find and install brew casks"
-    set -l inst (brew casks | sk --query=$argv[1] -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)
+    set -l inst (brew casks | fzf --query=$argv[1] -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)
 
     if test -n "$inst"
         for prog in $inst
@@ -54,7 +54,7 @@ end
 
 # Fuzzy Cask Uninstall
 function fcui --description "Fuzzy find and uninstall brew casks"
-    set -l inst (brew list --cask | sk --query=$argv[1] -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)
+    set -l inst (brew list --cask | fzf --query=$argv[1] -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)
 
     if test -n "$inst"
         for prog in $inst
@@ -108,16 +108,16 @@ function __fish_brew_needs_cask_to_uninstall
     return 1
 end
 # --- Register Completions ---
-# These will trigger sk on Tab if the conditions above are met.
+# These will trigger fzf on Tab if the conditions above are met.
 
 # `brew install <TAB>`
-complete -c brew -n '__fish_brew_needs_formula_to_install' -a "(brew formulae | sk -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)" --no-files
+complete -c brew -n '__fish_brew_needs_formula_to_install' -a "(brew formulae | fzf -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)" --no-files
 
 # `brew uninstall <TAB>`
-complete -c brew -n '__fish_brew_needs_formula_to_uninstall' -a "(brew leaves | sk -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)" --no-files
+complete -c brew -n '__fish_brew_needs_formula_to_uninstall' -a "(brew leaves | fzf -m --preview $FB_FORMULA_PREVIEW --bind $FB_FORMULA_BIND)" --no-files
 
 # `brew install --cask <TAB>`
-complete -c brew -n '__fish_brew_needs_cask_to_install' -a "(brew casks | sk -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)" --no-files
+complete -c brew -n '__fish_brew_needs_cask_to_install' -a "(brew casks | fzf -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)" --no-files
 
 # `brew uninstall --cask <TAB>`
-complete -c brew -n '__fish_brew_needs_cask_to_uninstall' -a "(brew list --cask | sk -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)" --no-files
+complete -c brew -n '__fish_brew_needs_cask_to_uninstall' -a "(brew list --cask | fzf -m --preview $FB_CASK_PREVIEW --bind $FB_CASK_BIND)" --no-files
