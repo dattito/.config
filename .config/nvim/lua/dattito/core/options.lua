@@ -27,8 +27,6 @@ opt.updatetime = 250
 
 opt.scrolloff = 10
 
-opt.winborder = 'rounded'
-
 vim.diagnostic.config({
 	underline = true,
 	virtual_text = true,
