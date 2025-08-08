@@ -90,3 +90,10 @@ function y
   end
   rm -f -- "$tmp"
 end
+
+function gwtac
+      set -l d (gwt add "$argv[1]" | tail -n 1)
+      if test "$d" != ""
+          z "$d"
+      end
+  end
