@@ -51,3 +51,6 @@ ralt + shift - m : SwitchAudioSource -t input -m toggle | terminal-notifier
 # Cycle through output devices
 ralt + shift - n : SwitchAudioSource -n | terminal-notifier
 
+alt + shift - b : terminal-notifier -message "Starting Colima..." | colima start && terminal-notifier -message "Started Colima"
+
+alt - b : terminal-notifier -message "Stopping Colima..." | colima stop && terminal-notifier -message "Stopped Colima"
