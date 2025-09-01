@@ -37,6 +37,7 @@ return {
 		cmp.setup({
 			sources = cmp.config.sources({
 				-- { name = "crates" },
+        { name = "jupynium", priority = 1000 },
 				{ name = "nvim_lsp" },
 				{ name = "lazydev" },
 				{ name = "copilot" },

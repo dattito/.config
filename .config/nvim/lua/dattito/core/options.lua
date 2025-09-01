@@ -35,3 +35,8 @@ vim.diagnostic.config({
 		border = "rounded",
 	},
 })
+
+vim.api.nvim_create_autocmd("VimLeave", {
+    pattern = "*",
+    command = "silent !zellij action switch-mode normal"
+})

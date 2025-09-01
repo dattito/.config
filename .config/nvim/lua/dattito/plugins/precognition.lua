@@ -1,7 +1,7 @@
 return {
 	"tris203/precognition.nvim",
 	cmd = "Precognition",
-	config = {
+	opts = {
 		startVisible = false,
 	},
 	keys = {
