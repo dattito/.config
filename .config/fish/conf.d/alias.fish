@@ -35,6 +35,7 @@ alias l. "eza -a | grep -E '^\.'"
 alias k kubectl
 alias ka "kubectl apply"
 alias kaf "kubectl apply -f"
+alias karf "kubectl apply -Rf"
 alias kd "kubectl delete"
 alias kdf "kubectl delete -f"
 alias kc "kubie ctx"
