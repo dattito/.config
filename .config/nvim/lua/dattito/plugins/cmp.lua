@@ -2,8 +2,6 @@ return {
 	"iguanacucumber/magazine.nvim",
 	name = "nvim-cmp", -- Otherwise highlighting gets messed up
 	dependencies = {
-		"neovim/nvim-lspconfig",
-
 		{ "https://codeberg.org/FelipeLema/cmp-async-path", name = "cmp-path" },
 		{ "iguanacucumber/mag-nvim-lsp", name = "cmp-nvim-lsp", opts = {} },
 		{ "iguanacucumber/mag-nvim-lua", name = "cmp-nvim-lua" },
@@ -37,14 +35,14 @@ return {
 		cmp.setup({
 			sources = cmp.config.sources({
 				-- { name = "crates" },
-        { name = "jupynium", priority = 1000 },
+				{ name = "jupynium", priority = 1000 },
 				{ name = "nvim_lsp" },
-				{ name = "lazydev" },
 				{ name = "copilot" },
 				{ name = "luasnip" },
 				-- { name = "nvim_lua" },
 				{ name = "path" },
 				{ name = "omni" },
+				{ name = "lazydev", group_index = 0 },
 			}),
 			snippet = {
 				expand = function(args)
