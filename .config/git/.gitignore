@@ -1,1 +1,8 @@
 .DS_Store
+DEV
+.claude
+notes.md
+.gwtconfig
+CLAUDE.md
+GEMINI.md
+.env
