@@ -38,6 +38,7 @@ alias kaf "kubectl apply -f"
 alias karf "kubectl apply -Rf"
 alias kd "kubectl delete"
 alias kdf "kubectl delete -f"
+alias kdrf "kubectl delete -Rf"
 alias kc "kubie ctx"
 
 alias yarn "corepack yarn"
