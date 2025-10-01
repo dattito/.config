@@ -54,3 +54,7 @@ ralt + shift - n : SwitchAudioSource -n | terminal-notifier
 alt + shift - b : terminal-notifier -message "Starting Colima..." | colima start && terminal-notifier -message "Started Colima"
 
 alt - b : terminal-notifier -message "Stopping Colima..." | colima stop && terminal-notifier -message "Stopped Colima"
+
+alt + shift - k : osascript -e 'quit app "Slack"'; osascript -e 'quit app "Microsoft Teams"'; osascript -e 'quit app "Microsoft Outlook"'
+
+alt - k : open -j -a Slack; open -j -a "Microsoft Teams"; open -j -a "Microsoft Outlook"
