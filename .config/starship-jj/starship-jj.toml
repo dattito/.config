@@ -1,0 +1,77 @@
+module_separator = " "
+reset_color = true
+
+[bookmarks]
+search_depth = 0
+exclude = []
+
+[[module]]
+type = "Symbol"
+symbol = "on"
+color = "White"
+
+# [[module]]
+# disabled = true
+# type = "Bookmarks"
+# separator = " "
+# color = "White"
+# behind_symbol = "⇡"
+# surround_with_quotes = true
+
+[[module]]
+type = "Commit"
+max_length = 24
+empty_text = ""
+surround_with_quotes = true
+
+[[module]]
+type = "State"
+separator = " "
+
+[module.conflict]
+disabled = false
+text = "(CONFLICT)"
+color = "Red"
+
+[module.divergent]
+disabled = false
+text = "(DIVERGENT)"
+color = "Cyan"
+
+[module.empty]
+disabled = false
+text = "(empty)"
+color = "White"
+
+[module.immutable]
+disabled = false
+text = "(IMMUTABLE)"
+color = "Yellow"
+
+[module.hidden]
+disabled = false
+text = "(HIDDEN)"
+color = "Yellow"
+
+[[module]]
+type = "Metrics"
+template = ""
+color = "White"
+disabled = true
+
+[module.changed_files]
+prefix = "~"
+suffix = ""
+color = "White"
+
+[module.added_lines]
+prefix = "+"
+suffix = ""
+color = "White"
+
+[module.removed_lines]
+prefix = "-"
+suffix = ""
+color = "White"
+
+

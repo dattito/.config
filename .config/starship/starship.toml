@@ -14,27 +14,64 @@ $shell\
 $character"""
 
 right_format="""
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
+${custom.jj}\
+${custom.git_branch}\
+${custom.git_commit}\
+${custom.git_state}\
+${custom.git_metrics}\
+${custom.git_status}\
 $jobs\
 $battery\
 $time\
 $status"""
 
-# right_format="""
-# $all\
-# $git_branch\
-# $git_commit\
-# $git_state\
-# $git_metrics\
-# $git_status\
-# $jobs\
-# $battery\
-# $time\
-# $status"""
+[custom.jj]
+command = "prompt"
+format = "$output"
+ignore_timeout = true
+shell = ["starship-jj", "--ignore-working-copy", "starship"]
+use_stdin = false
+when = true
+
+[git_commit]
+disabled = true
+
+[custom.git_commit]
+when = true
+ignore_timeout = true
+command = "jj --ignore-working-copy root >/dev/null 2>&1 || starship module git_commit"
+description = "Only show git_commit if we're not in a jj repo"
+
+[git_state]
+disabled = true
+
+[custom.git_state]
+when = true
+ignore_timeout = true
+command = "jj --ignore-working-copy root >/dev/null 2>&1 || starship module git_state"
+description = "Only show git_state if we're not in a jj repo"
+
+[git_metrics]
+disabled = true
+added_style = "dattito_line"
+deleted_style = "dattito_line"
+format = '([\[+$added/-$deleted\]]($added_style))'
+
+[custom.git_metrics]
+when = true
+ignore_timeout = true
+command = "jj --ignore-working-copy root >/dev/null 2>&1 || starship module git_metrics"
+description = "Only show git_metrics if we're not in a jj repo"
+
+[git_status]
+disabled = true
+style = "dattito_line"
+
+[custom.git_status]
+when = true
+ignore_timeout = true
+command = "jj --ignore-working-copy root >/dev/null 2>&1 || starship module git_status"
+description = "Only show git_status if we're not in a jj repo"
 
 [fill]
 symbol = '-'
@@ -53,16 +90,6 @@ error_symbol = '[\$](bold surface1)'
 [gcloud]
 disabled = true
 
-[git_metrics]
-disabled = false
-added_style = "dattito_line"
-deleted_style = "dattito_line"
-format = '([\[+$added/-$deleted\]]($added_style))'
-
-[git_status]
-disabled = false
-style = "dattito_line"
-
 [docker_context]
 format = '(using Docker 🐳)'
 
@@ -76,8 +103,15 @@ disabled = true
 show_milliseconds = true
 
 [git_branch]
+disabled = true
 style = "dattito_line"
 format = "[on $symbol$branch(:$remote_branch)]($style)"
+
+[custom.git_branch]
+when = true
+ignore_timeout = true
+command = "jj --ignore-working-copy root >/dev/null 2>&1 || starship module git_branch"
+description = "Only show git_branch if we're not in a jj repo"
 
 # --------- THEME
 
