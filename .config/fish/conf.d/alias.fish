@@ -6,10 +6,12 @@ alias vo "vim +Oil"
 alias g git
 alias gs "git status"
 alias lg lazygit
+alias lj lazyjj
 alias ld lazydocker
 alias b fbi
 alias vn "z dotfiles; and v"
-alias t "tree -I node_modules -I .git -a"
+alias t task
+alias tt taskwarrior-tui
 alias lc "latexmk -pdf -dvi- -shell-escape -output-directory=output"
 alias lw "watchexec -i 'output/**' 'latexmk -pdf -dvi- -shell-escape -output-directory=output'"
 alias zf "zellij run -f --"

@@ -13,12 +13,19 @@ backend = "ssh"
 key = "~/.ssh/dattito02_ed25519.pub"
 
 [git]
-auto-local-bookmark = true
 sign-on-push = true
 
 [aliases]
-init = ["git", "init"]
+i = ["git", "init"]
 l = ["log", "--limit", "10"]
+la = ["log", "-r", "all()"]
+lm = ["log", "-r", "main-..@"]
+gp = ["git", "push", "-b"]
+c = ["commit"]
+gc = ["git", "clone"]
+d = ["describe"]
+n = ["new"]
+f = ["git", "fetch"]
 ps = ["util", "exec", "--", "bash", "-c", """
 set -e
 

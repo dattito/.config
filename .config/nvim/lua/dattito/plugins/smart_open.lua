@@ -30,4 +30,5 @@ return {
       desc = "Find files",
     },
   },
+  cmd = {"Telescope"}
 }

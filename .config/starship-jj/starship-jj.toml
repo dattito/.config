@@ -1,4 +1,4 @@
-module_separator = " "
+module_separator = ""
 reset_color = true
 
 [bookmarks]
@@ -7,7 +7,7 @@ exclude = []
 
 [[module]]
 type = "Symbol"
-symbol = "on"
+symbol = ""
 color = "White"
 
 # [[module]]
@@ -23,6 +23,7 @@ type = "Commit"
 max_length = 24
 empty_text = ""
 surround_with_quotes = true
+surround_with_quotes_when_empty = false
 
 [[module]]
 type = "State"
@@ -30,34 +31,35 @@ separator = " "
 
 [module.conflict]
 disabled = false
-text = "(CONFLICT)"
+text = " (conflict)"
 color = "Red"
 
 [module.divergent]
 disabled = false
-text = "(DIVERGENT)"
+text = " (divergent)"
 color = "Cyan"
 
 [module.empty]
 disabled = false
-text = "(empty)"
+text = "[0]"
 color = "White"
 
 [module.immutable]
 disabled = false
-text = "(IMMUTABLE)"
+text = " (immutable)"
 color = "Yellow"
 
 [module.hidden]
 disabled = false
-text = "(HIDDEN)"
+text = " (hidden)"
 color = "Yellow"
 
 [[module]]
 type = "Metrics"
-template = ""
+template = "[{changed}{added}{removed}]"
 color = "White"
 disabled = true
+hide_if_empty = true
 
 [module.changed_files]
 prefix = "~"

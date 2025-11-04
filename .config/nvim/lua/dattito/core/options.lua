@@ -35,6 +35,7 @@ vim.diagnostic.config({
 	},
 })
 
+
 -- vim.filetype.add({
 -- 	pattern = {
 -- 		[".*%.ipynb.*"] = "ipynb",

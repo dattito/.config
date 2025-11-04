@@ -54,33 +54,8 @@ return {
 			mods = "OPT",
 			action = wezterm.action({ SendString = "~" }),
 		},
-	},
-
-	mouse_bindings = {
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "NONE",
-			action = act.CompleteSelection("ClipboardAndPrimarySelection"),
-		},
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "NONE",
-			action = act.CompleteSelection("PrimarySelection"),
-		},
-
-		-- and make CTRL-Click open hyperlinks
-		{
-			event = { Up = { streak = 1, button = "Left" } },
-			mods = "CTRL",
-			action = act.OpenLinkAtMouseCursor,
-		},
-
-		-- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
-		{
-			event = { Down = { streak = 1, button = "Left" } },
-			mods = "CTRL",
-			action = act.Nop,
-		},
+    -- Claude Code
+		{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
 	},
 	initial_cols = 150,
 	initial_rows = 50,

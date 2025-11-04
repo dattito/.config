@@ -12,7 +12,7 @@ return {
 	},
 	keys = {
 		"<space>sc",
-		"<space>sc",
+		"<space>sb",
 		"<space>sf",
 		"<space>sl",
 		"<space>su",
@@ -40,14 +40,13 @@ return {
 				scratch_repl = true,
 				repl_definition = {
 					sh = {
-						-- Can be a table or a function that
-						-- returns a table (see below)
 						command = { "fish" },
 					},
 					python = {
-						command = { "python3" }, -- or { "ipython", "--no-autoindent" }
+            command = { "ipython", "--no-autoindent" },
 						format = common.bracketed_paste_python,
 						block_dividers = { "# %%", "#%%" },
+            env = {PYTHON_BASIC_REPL = "1"}
 					},
 				},
 				-- set the file type of the newly created repl to ft
@@ -58,33 +57,15 @@ return {
 					-- or return a string name such as the following
 					-- return "iron"
 				end,
-				-- How the repl window will be displayed
-				-- See below for more information
 				repl_open_cmd = view.split.vertical.botright("40%"),
-
-				-- repl_open_cmd can also be an array-style table so that multiple
-				-- repl_open_commands can be given.
-				-- When repl_open_cmd is given as a table, the first command given will
-				-- be the command that `IronRepl` initially toggles.
-				-- Moreover, when repl_open_cmd is a table, each key will automatically
-				-- be available as a keymap (see `keymaps` below) with the names
-				-- toggle_repl_with_cmd_1, ..., toggle_repl_with_cmd_k
-				-- For example,
-				--
-				-- repl_open_cmd = {
-				--   view.split.vertical.rightbelow("%40"), -- cmd_1: open a repl to the right
-				--   view.split.rightbelow("%25")  -- cmd_2: open a repl below
-				-- }
 			},
-			-- Iron doesn't set keymaps by default anymore.
-			-- You can set them here or manually add keymaps to the functions in iron.core
 			keymaps = {
 				toggle_repl = "<space>re", -- toggles the repl open and closed.
 				-- If repl_open_command is a table as above, then the following keymaps are
 				-- available
 				-- toggle_repl_with_cmd_1 = "<space>rv",
 				-- toggle_repl_with_cmd_2 = "<space>rh",
-				restart_repl = "<space>rR", -- calls `IronRestart` to restart the repl
+				restart_repl = "<space>rR",
 				send_motion = "<space>sc",
 				visual_send = "<space>sc",
 				send_file = "<space>sf",
@@ -102,15 +83,12 @@ return {
 				exit = "<space>sq",
 				clear = "<space>cl",
 			},
-			-- If the highlight is on, you can change how it looks
-			-- For the available options, check nvim_set_hl
 			highlight = {
 				italic = true,
 			},
-			ignore_blank_lines = true, -- ignore blank lines when sending visual select lines
+			ignore_blank_lines = true,
 		})
 
-		-- iron also has a list of commands, see :h iron-commands for all available commands
 		vim.keymap.set("n", "<space>rf", "<cmd>IronFocus<cr>")
 		vim.keymap.set("n", "<space>rh", "<cmd>IronHide<cr>")
 	end,

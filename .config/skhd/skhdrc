@@ -1,3 +1,5 @@
+.shell "/bin/dash"
+
 ralt - 1 : open -a WezTerm
 ralt + shift - 1 : open -a "Visual Studio Code"
 ralt - 2 : open -a Zen
@@ -14,6 +16,9 @@ lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
 
 cmd - h : skhd -k "0x33"
 
+#y : skhd -k "0x06"
+#z : skhd -k "0x10"
+
 # lalt - y : skhd -k "0x7B"
 # lalt - n : skhd -k "0x7D"
 # lalt - e : skhd -k "0x7E"
@@ -27,15 +32,15 @@ ralt - e : skhd -k "ctrl + cmd + lalt - 0x7C"
 lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
 lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove
 
-alt - o: osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+alt - q: osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
-ralt - s : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+# ralt - s : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 ralt - d : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 ralt - a : yabai -m window --display prev || yabai -m window --display last; yabai -m display --focus prev || yabai -m display --focus last
 # ralt - f : yabai -m window --display next || yabai -m window --display first; yabai -m display --focus next || yabai -m display --focus first
 
-ralt - d : yabai -m config layout stack
+# ralt + rcmd - d : yabai -m config layout stack
 ralt + rcmd - d : yabai -m config layout float
 
 # stop/start/restart yabai
@@ -58,3 +63,9 @@ alt - b : terminal-notifier -message "Stopping Colima..." | colima stop && term
 alt + shift - k : osascript -e 'quit app "Slack"'; osascript -e 'quit app "Microsoft Teams"'; osascript -e 'quit app "Microsoft Outlook"'
 
 alt - k : open -j -a Slack; open -j -a "Microsoft Teams"; open -j -a "Microsoft Outlook"
+
+# Time Tracking
+
+alt - r : timew continue && echo -n "blue" | nc -4u -w0 localhost 1738 && terminal-notifier -message "continue" -title "timew"
+shift + alt - r : timew stop; echo -n "black" | nc -4u -w0 localhost 1738 && terminal-notifier -message "stop" -title "timew" 
+cmd + alt - r : timew | terminal-notifier -title "timew"
