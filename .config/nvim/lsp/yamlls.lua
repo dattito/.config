@@ -1,5 +1,5 @@
 return {
-	cmd = true,
+	cmd = { 'true' },
 	settings = {
 		yaml = {
 			schemaStore = {

@@ -13,7 +13,6 @@ opt.clipboard:append("unnamedplus")
 
 vim.g.mapleader = " "
 
-
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
@@ -36,7 +35,8 @@ vim.diagnostic.config({
 	},
 })
 
-vim.api.nvim_create_autocmd("VimLeave", {
-    pattern = "*",
-    command = "silent !zellij action switch-mode normal"
-})
+-- vim.filetype.add({
+-- 	pattern = {
+-- 		[".*%.ipynb.*"] = "ipynb",
+-- },
+-- })

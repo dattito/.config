@@ -18,6 +18,8 @@ return {
 						["if"] = "@function.inner",
 						["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/argument" },
 						["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/argument" },
+						["ib"] = { query = "@code_cell.inner", desc = "in block" },
+						["ab"] = { query = "@code_cell.outer", desc = "around block" },
 					},
 				},
 				swap = {
@@ -25,10 +27,12 @@ return {
 					swap_next = {
 						["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
 						["<leader>nm"] = "@function.outer", -- swap function with next
+						["<leader>sbl"] = "@code_cell.outer",
 					},
 					swap_previous = {
 						["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
 						["<leader>pm"] = "@function.outer", -- swap function with previous
+						["<leader>sbh"] = "@code_cell.outer",
 					},
 				},
 				move = {
@@ -43,6 +47,7 @@ return {
 
 						["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
 						["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+						["]b"] = { query = "@code_cell.inner", desc = "next code block" },
 					},
 					goto_next_end = {
 						["]F"] = { query = "@call.outer", desc = "Next function call end" },
@@ -57,6 +62,7 @@ return {
 						["[c"] = { query = "@class.outer", desc = "Prev class start" },
 						["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
 						["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+						["[b"] = { query = "@code_cell.inner", desc = "previous code block" },
 					},
 					goto_previous_end = {
 						["[F"] = { query = "@call.outer", desc = "Prev function call end" },

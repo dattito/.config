@@ -1,5 +1,5 @@
 return {
-	cmd = true,
+	cmd = { 'true' },
 	settings = {
 		json = {
 			schemas = require("schemastore").json.schemas(),

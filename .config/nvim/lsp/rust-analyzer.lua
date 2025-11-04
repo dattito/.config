@@ -1,9 +1,9 @@
 return {
-  cmd = true,
+cmd = { 'rust-analyzer' },
 	filetypes = { "rust" },
 	root_markers = { "Cargo.lock" },
 	settings = {
-		["rust-analyzer"] = {
+		["rust_analyzer"] = {
 			check = {
 				features = "all",
 				command = "clippy",

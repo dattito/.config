@@ -1,4 +1,4 @@
 return {
-	cmd = true,
+	cmd = { 'true' },
 	format = false,
 }
