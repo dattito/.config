@@ -1,0 +1,174 @@
+{
+  "title": "skhd-to-karabiner_custom_apps",
+  "rules": [
+    {
+      "description": "Right Option (ralt) Application/Script Launchers",
+      "manipulators": [
+        // ralt - 1 : open -a WezTerm
+        {
+          "type": "basic",
+          "from": { "key_code": "1", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a WezTerm" }]
+        },
+        // ralt + shift - 1 : open -a "Visual Studio Code"
+        {
+          "type": "basic",
+          "from": { "key_code": "1", "modifiers": { "mandatory": ["right_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a \"Visual Studio Code\"" }]
+        },
+        // ralt - 2 : open -a Zen
+        {
+          "type": "basic",
+          "from": { "key_code": "2", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a Zen" }]
+        },
+        // ralt + shift - 2 : open -a Preview
+        {
+          "type": "basic",
+          "from": { "key_code": "2", "modifiers": { "mandatory": ["right_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a Preview" }]
+        },
+        // ralt + cmd - 2 : open -a "Microsoft Edge Dev"
+        {
+          "type": "basic",
+          "from": { "key_code": "2", "modifiers": { "mandatory": ["right_option", "left_command"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a \"Microsoft Edge Dev\"" }]
+        },
+        // ralt - 3 : open -a Spotify
+        {
+          "type": "basic",
+          "from": { "key_code": "3", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a Spotify" }]
+        },
+        // ralt + shift - 3 : open -a "Microsoft Teams"
+        {
+          "type": "basic",
+          "from": { "key_code": "3", "modifiers": { "mandatory": ["right_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a \"Microsoft Teams\"" }]
+        },
+        // ralt - 4 : open -a Element
+        {
+          "type": "basic",
+          "from": { "key_code": "4", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a Element" }]
+        },
+        // ralt + shift - 4 : open -a Slack
+        {
+          "type": "basic",
+          "from": { "key_code": "4", "modifiers": { "mandatory": ["right_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a Slack" }]
+        },
+        // ralt - 5 : open -a "Visual Studio Code"
+        {
+          "type": "basic",
+          "from": { "key_code": "5", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a \"Visual Studio Code\"" }]
+        },
+        // ralt - 6 : open -a "Microsoft Outlook"
+        {
+          "type": "basic",
+          "from": { "key_code": "6", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a \"Microsoft Outlook\"" }]
+        },
+        // ralt - 7 : open -a Docker
+        {
+          "type": "basic",
+          "from": { "key_code": "7", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -a Docker" }]
+        },
+        // lshift + ralt - q : osascript -e 'tell application "Finder" to sleep'
+        {
+          "type": "basic",
+          "from": { "key_code": "q", "modifiers": { "mandatory": ["right_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "osascript -e 'tell application \"Finder\" to sleep'" }]
+        },
+        // alt - q: osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+        {
+          "type": "basic",
+          "from": { "key_code": "q", "modifiers": { "mandatory": ["left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to not dark mode'" }]
+        },
+        // lalt + shift - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add (Using left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "m", "modifiers": { "mandatory": ["left_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add" }]
+        },
+        // lalt - m : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove (Using left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "m", "modifiers": { "mandatory": ["left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "/Applications/Privileges.app/Contents/Resources/PrivilegesCLI --remove" }]
+        },
+        // The following commands are yabai/skhd-specific and cannot be translated directly to key presses in Karabiner.
+        // They are translated to shell commands.
+        // ctrl + alt - q : yabai --stop-service (Using left_control and left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "q", "modifiers": { "mandatory": ["left_control", "left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "yabai --stop-service" }]
+        },
+        // ctrl + alt - s : yabai --start-service (Using left_control and left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "s", "modifiers": { "mandatory": ["left_control", "left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "yabai --start-service" }]
+        },
+        // ctrl + alt - r : yabai --restart-service (Using left_control and left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "r", "modifiers": { "mandatory": ["left_control", "left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "yabai --restart-service" }]
+        },
+        // ctrl + alt - d : pmset displaysleepnow (Using left_control and left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "d", "modifiers": { "mandatory": ["left_control", "left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "pmset displaysleepnow" }]
+        },
+        // alt + shift - b : terminal-notifier -message "Starting Colima..." | colima start && terminal-notifier -message "Started Colima" (Using left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "b", "modifiers": { "mandatory": ["left_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "terminal-notifier -message \"Starting Colima...\" | colima start && terminal-notifier -message \"Started Colima\"" }]
+        },
+        // alt - b : terminal-notifier -message "Stopping Colima..." | colima stop && terminal-notifier -message "Stopped Colima" (Using left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "b", "modifiers": { "mandatory": ["left_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "terminal-notifier -message \"Stopping Colima...\" | colima stop && terminal-notifier -message \"Stopped Colima\"" }]
+        },
+        // alt + shift - k : quit apps (Using left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "k", "modifiers": { "mandatory": ["right_option", "left_shift"], "optional": ["any"] } },
+          "to": [{ "shell_command": "osascript -e 'quit app \"Slack\"'; osascript -e 'quit app \"Microsoft Teams\"'; osascript -e 'quit app \"Microsoft Outlook\"'" }]
+        },
+        // alt - k : open apps (Using left_option)
+        {
+          "type": "basic",
+          "from": { "key_code": "k", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "open -j -a Slack; open -j -a \"Microsoft Teams\"; open -j -a \"Microsoft Outlook\"" }]
+        },
+        // ralt - f : skhd -k "ctrl + fn - f"
+        // This command is *not* translated as it calls skhd directly, which implies you intend for skhd to handle it.
+        // It is recommended to leave skhd-specific commands in skhd.
+        // yabai commands (ralt - d and ralt - a) are also best handled by skhd if it is running,
+        // but are included below as shell commands using right_option.
+        
+        // ralt - d : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+        {
+          "type": "basic",
+          "from": { "key_code": "d", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "yabai -m window --focus stack.next || yabai -m window --focus stack.first" }]
+        },
+        // ralt - a : yabai -m window --display prev || yabai -m display --focus last; yabai -m display --focus prev || yabai -m display --focus last
+        {
+          "type": "basic",
+          "from": { "key_code": "a", "modifiers": { "mandatory": ["right_option"], "optional": ["any"] } },
+          "to": [{ "shell_command": "yabai -m window --display prev || yabai -m display --focus last; yabai -m display --focus prev || yabai -m display --focus last" }]
+        }
+      ]
+    },
+  ]
+}
