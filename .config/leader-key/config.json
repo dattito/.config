@@ -4,11 +4,23 @@
       "actions" : [
         {
           "key" : "1",
+          "label" : "open main workspace",
+          "type" : "command",
+          "value" : "aerospace workspace 1"
+        },
+        {
+          "key" : "2",
+          "label" : "open external monitor workspace",
+          "type" : "command",
+          "value" : "aerospace workspace 2"
+        },
+        {
+          "key" : "t",
           "type" : "application",
           "value" : "/Applications/WezTerm.app"
         },
         {
-          "key" : "2",
+          "key" : "z",
           "type" : "application",
           "value" : "/Applications/Zen.app"
         },
@@ -23,12 +35,7 @@
           "value" : "/Applications/Visual Studio Code.app"
         },
         {
-          "key" : "s",
-          "type" : "application",
-          "value" : "/Applications/Slack.app"
-        },
-        {
-          "key" : "t",
+          "key" : "m",
           "type" : "application",
           "value" : "/Applications/Microsoft Teams.app"
         },
@@ -36,11 +43,62 @@
           "key" : "o",
           "type" : "application",
           "value" : "/Applications/Microsoft Outlook.app"
+        },
+        {
+          "key" : "e",
+          "type" : "application",
+          "value" : "/System/Library/CoreServices/Finder.app"
+        },
+        {
+          "actions" : [
+            {
+              "key" : "l",
+              "type" : "application",
+              "value" : "/Applications/Slack.app"
+            },
+            {
+              "key" : "p",
+              "type" : "command",
+              "value" : "open -a Spotify"
+            },
+            {
+              "key" : "e",
+              "type" : "application",
+              "value" : "/System/Applications/System Settings.app"
+            }
+          ],
+          "key" : "s",
+          "type" : "group"
         }
       ],
       "iconPath" : "macwindow",
       "key" : "space",
       "label" : "apps",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "t",
+          "label" : "Move to Terminal",
+          "type" : "command",
+          "value" : "aerospace move-node-to-workspace T && aerospace workspace T"
+        },
+        {
+          "key" : "z",
+          "label" : "Move to Zen",
+          "type" : "command",
+          "value" : "aerospace move-node-to-workspace Z && aerospace workspace Z"
+        },
+        {
+          "key" : "1",
+          "label" : "Move to 1",
+          "type" : "command",
+          "value" : "aerospace move-node-to-workspace 1 && aerospace workspace 1"
+        }
+      ],
+      "key" : "m",
+      "label" : "aerospace",
       "type" : "group"
     }
   ],
