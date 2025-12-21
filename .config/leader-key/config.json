@@ -1,0 +1,48 @@
+{
+  "actions" : [
+    {
+      "actions" : [
+        {
+          "key" : "1",
+          "type" : "application",
+          "value" : "/Applications/WezTerm.app"
+        },
+        {
+          "key" : "2",
+          "type" : "application",
+          "value" : "/Applications/Zen.app"
+        },
+        {
+          "key" : "l",
+          "type" : "application",
+          "value" : "/Applications/Leader Key.app"
+        },
+        {
+          "key" : "v",
+          "type" : "application",
+          "value" : "/Applications/Visual Studio Code.app"
+        },
+        {
+          "key" : "s",
+          "type" : "application",
+          "value" : "/Applications/Slack.app"
+        },
+        {
+          "key" : "t",
+          "type" : "application",
+          "value" : "/Applications/Microsoft Teams.app"
+        },
+        {
+          "key" : "o",
+          "type" : "application",
+          "value" : "/Applications/Microsoft Outlook.app"
+        }
+      ],
+      "iconPath" : "macwindow",
+      "key" : "space",
+      "label" : "apps",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}
